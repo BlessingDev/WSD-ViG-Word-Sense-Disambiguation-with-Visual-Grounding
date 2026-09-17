@@ -11,6 +11,7 @@ from vllm.multimodal.image import convert_image_mode
 from vllm.multimodal.utils import encode_image_url
 from vllm.lora.request import LoRARequest
 from vllm.config import ReasoningConfig
+from vllm.lora.request import LoRARequest
 
 from PIL import Image
 import pandas as pd
@@ -176,6 +177,86 @@ def inference_image_zeroshot_gemma3(args):
         
         print("Answer Example: {}".format(answers[-1]))
     
+    data_df.loc[valid_indices, "generated_text"] = answers
+    data_df.to_csv(args.output_file_path, index=False)
+
+def inference_image_peft_gemma3(args):
+    data_df = pd.read_csv(args.inference_set_path)
+    
+    engine_args = EngineArgs(
+        model=args.model_checkpoint,  # 원본 베이스 모델 경로 (google/gemma-3-27b-it)
+        enable_lora=True,  # LoRA 기능 활성화
+        max_lora_rank=32,  # 학습 시 설정한 r=32에 맞춰 지정 (기본값은 16이라 미지정 시 에러 발생)
+        max_loras=1,  # 동시 서빙할 LoRA 어댑터 수
+        max_model_len=8192,
+        max_num_seqs=2,
+        mm_processor_kwargs={"do_pan_and_scan": True},
+        limit_mm_per_prompt={"image": 1},
+    )
+    default_limits = {"image": 0, "video": 0, "audio": 0, "vision_chunk": 0}
+    engine_args.limit_mm_per_prompt = default_limits | dict(
+        engine_args.limit_mm_per_prompt or {}
+    )
+    engine_args.seed = args.seed
+    engine_args.tensor_parallel_size = 4
+
+    llm = LLM.from_engine_args(engine_args)
+
+    # 2. LoRARequest 정의 (식별자명, 고유 ID, 어댑터 디렉터리 경로)
+    lora_request = LoRARequest(
+        lora_name="gemma3_sense_adapter",
+        lora_int_id=1,
+        lora_path=args.lora_adapter_path,  # 학습 후 저장된 final_lora_adapter 경로
+    )
+    
+    row_per_run = 200
+    data_splits = [data_df[i:i + row_per_run].copy() for i in range(0, data_df.shape[0], row_per_run)]
+        
+    answers = []
+    valid_indices = []
+    for split_idx, data_split in enumerate(data_splits):
+        print("Completed inference for split {}/{}.".format(split_idx + 1, len(data_splits)))
+            
+        inputs = list()
+        for idx, row in data_split.iterrows():
+            prompts = ("<bos><start_of_turn>user\n"
+                f"<start_of_image><image_soft_token><end_of_image>{row['prompt']}<end_of_turn>\n"
+                "<start_of_turn>model\n")
+                #prompts = prompts.replace("A: ", "")
+                
+            img_path = os.path.join(args.image_dir, row["gold_image"])
+                
+            turncated = is_truncated(img_path)
+            if not turncated:
+                image_file = Image.open(img_path)
+                inputs.append({
+                    "prompt": prompts,
+                    "multi_modal_data": {
+                        "image": convert_image_mode(image_file, "RGB")
+                    }
+                })
+                valid_indices.append(idx)
+            else:
+                print(f"Image {img_path} is truncated. Skipping this sample.")
+            
+            # Greedy Decoding
+        sampling_params = SamplingParams(temperature=0.0,
+                                        max_tokens=2048,
+                                        stop_token_ids=None)
+            
+        outputs = outputs = llm.generate(
+            inputs,
+            sampling_params=sampling_params,
+            lora_request=lora_request,
+        )
+        
+        
+        for answer_idx, o in enumerate(outputs):
+            generated_text = o.outputs[0].text
+            answers.append(generated_text)
+            
+        print("Answer Example: {}".format(answers[-1]))
+        
     data_df.loc[valid_indices, "generated_text"] = answers
     data_df.to_csv(args.output_file_path, index=False)
 
@@ -735,6 +816,8 @@ if __name__ == "__main__":
     )
     parser.add_argument("--model_checkpoint", type=str, default="google/gemma-3-12b-it",
                         help="The name of the model to use for inference.")
+    parser.add_argument("--lora_adapter_path", type=str, default=None,
+                        help="Path to the LoRA adapter for inference. (Optional)")
     parser.add_argument("--seed", type=int, default=42,
                         help="Random seed for reproducibility.")
     parser.add_argument("--inference_set_path", type=str,
@@ -770,7 +853,10 @@ if __name__ == "__main__":
     else:
         if args.example_set_path is None:
             if "gemma-3" in args.model_checkpoint.lower():
-                inference_image_zeroshot_gemma3(args)
+                if args.lora_adapter_path is not None:
+                    inference_image_peft_gemma3(args)
+                else:
+                    inference_image_zeroshot_gemma3(args)
             elif "qwen3" in args.model_checkpoint.lower():
                 inference_image_zeroshot_qwen3(args)
             elif "exaone-4.5" in args.model_checkpoint.lower():
