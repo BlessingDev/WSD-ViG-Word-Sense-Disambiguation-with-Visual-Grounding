@@ -5,6 +5,7 @@ from transformers import (
     AutoModelForCausalLM,
     AutoProcessor,
     EarlyStoppingCallback,
+    Seq2SeqTrainingArguments,
 )
 from trl import (
     SFTTrainer,
@@ -13,6 +14,7 @@ from trl import (
 import argparse
 import json
 import os
+import numpy as np
 
 os.environ["PYTORCH_ALLOC_CONF"] = "expandable_segments:True"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3"
@@ -27,7 +29,7 @@ VAL_DATASET_PATH = "/workspace/data/dataset_construction_train/val_set_pos.csv"
 MAX_INPUT_LENGTH = 2048
 MAX_OUTPUT_LENGTH = 256
 
-PROMPT_TEMPLATE = """Text Context: {context}
+image_sense_prompt = """Text Context: {context}
 Ambiguous Word: {word}
 ---
 Sense List:
@@ -42,8 +44,38 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
-Provide your final decision as the format '[sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
+After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
 """
+
+image_rag_sense_prompt = """Text Context: {context}
+Ambiguous Word: {word}
+---
+Sense List:
+{sense_list}
+---
+Image Web Search Results:
+{web_search_results}
+---
+You are an expert linguistic annotator. A specific target word found within the context of a given text, and a list of potential senses for that word are provided. Your task is to determine the correct sense by selecting the one that most directly aligns with the context and its background event.
+---
+Decision Logic & Rules
+Follow these rules in order of priority to make your decision:
+
+First, take a look at the given context: The image, 'Text Context', and 'Image Web Search Results'. Leverage those context to analyze any significant background context is provided in the image. If such information exists, prioritize the sense that best fits this background information, even if it is not the most direct match for the visual content.
+
+Directness of Meaning: If no meaningful background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
+---
+After all your reasoning is finished, read through the list of senses provided once again, carefully and in detail, one by one. Then, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
+"""
+
+def preprocess_logits_for_metrics(logits, labels):
+    """
+    GPU 메모리 상에서 Vocab 차원의 Logits를 Argmax Token ID로 즉시 축소하여 OOM을 방지합니다.
+    logits: (batch_size, seq_len, vocab_size) -> (batch_size, seq_len)
+    """
+    if isinstance(logits, tuple):
+        logits = logits[0]
+    return torch.argmax(logits, dim=-1)
 
 def main(args):
     #model_name = args.model_checkpoint.split("/")[-1]
@@ -55,7 +87,34 @@ def main(args):
     # Load tokenizer and model
     processor = AutoProcessor.from_pretrained(args.model_checkpoint)
     processor.tokenizer.pad_token = processor.tokenizer.eos_token
-    
+
+
+    def compute_wsd_accuracy(eval_pred):
+        preds, labels = eval_pred
+        
+        sample_correct = []
+        
+        # [핵심] Causal LM Shift 정렬
+        # preds[:, i]는 labels[:, i + 1]을 예측한 토큰이므로 1칸 밀어줍니다.
+        shift_preds = preds[:, :-1]
+        shift_labels = labels[:, 1:]
+        
+        # 배치 내의 각 샘플(행) 단위로 순회
+        for pred_row, label_row in zip(shift_preds, shift_labels):
+            mask = (label_row != -100)
+            
+            # 타겟 구간(숫자 + EOS)이 전부 일치해야만 정답으로 인정
+            if mask.any():
+                is_match = np.all(pred_row[mask] == label_row[mask])
+                sample_correct.append(is_match)
+
+        # 최종 Exact Match (진짜 WSD 분류 정확도)
+        accuracy = np.mean(sample_correct) if sample_correct else 0.0
+
+        return {
+            "eval_wsd_accuracy": accuracy
+        }
+        
     if "Qwen" in args.model_checkpoint:
         from transformers import Qwen3VLForConditionalGeneration
         
@@ -71,19 +130,32 @@ def main(args):
         )
     
 
+    if args.prompt_template == "image_sense":
+        prompt_template = image_sense_prompt
+    elif args.prompt_template == "image_rag_sense":
+        prompt_template = image_rag_sense_prompt
+
     # 2. PREPROCESS THE DATA
     # ------------------------------------
     # We frame the task with a prefix to guide the model.
     def preprocess_function(sample):
-        assistant_text = str(int(sample["gold_sense"]))
+        assistant_text = "A: " + str(int(sample["gold_sense"]))
         
         sense_list = json.loads(sample["senses"]).get(sample["gold_pos"], [])
         sense_str = "\n".join([f" {idx + 1}. {sense}" for idx, sense in enumerate(sense_list)])
-        prompt = PROMPT_TEMPLATE.format(
-            context=sample["word_phrase"],
-            word=sample["word"],
-            sense_list=sense_str
-        )
+        if args.prompt_template == "image_rag_sense":
+            prompt = prompt_template.format(
+                context=sample["word_phrase"],
+                word=sample["word"],
+                sense_list=sense_str,
+                web_search_results=sample["web_search_results"]
+            )
+        else:
+            prompt = prompt_template.format(
+                context=sample["word_phrase"],
+                word=sample["word"],
+                sense_list=sense_str
+            )
         
         # Prepare inputs with the prefix
         return {
@@ -112,8 +184,10 @@ def main(args):
     # Define training arguments
     training_args = SFTConfig(
         output_dir=args.output_dir,
-        eval_strategy="epoch",
-        save_strategy="epoch",
+        eval_strategy="steps",
+        save_strategy="steps",
+        eval_steps=args.save_steps,
+        save_steps=args.save_steps,
         do_train=True,
         do_eval=True,
         packing=False,
@@ -129,7 +203,9 @@ def main(args):
         save_total_limit=3,
         num_train_epochs=args.train_epochs, # Increase epochs for small datasets
         gradient_checkpointing=True,
-        metric_for_best_model="eval_loss",
+        label_smoothing_factor=args.label_smoothing_factor,
+        metric_for_best_model="eval_wsd_accuracy",
+        greater_is_better=True,
         bf16=bf16_precision, # Use mixed precision if a GPU is available
         push_to_hub=False,
         load_best_model_at_end=True,
@@ -143,6 +219,8 @@ def main(args):
         train_dataset=tokenized_train_dataset,
         eval_dataset=tokenized_val_dataset,
         processing_class=processor.tokenizer,
+        compute_metrics=compute_wsd_accuracy,
+        preprocess_logits_for_metrics=preprocess_logits_for_metrics,
         callbacks=[EarlyStoppingCallback(early_stopping_patience=3)]
     )
     
@@ -173,13 +251,19 @@ if __name__ == "__main__":
         "--learning_rate", type=float, default=1e-5
     )
     parser.add_argument(
-        "--dropout_rate", type=float, default=0.1
+        "--dropout_rate", type=float, default=0.05
+    )
+    parser.add_argument(
+        "--label_smoothing_factor", type=float, default=0.0
     )
     parser.add_argument(
         "--warmup_steps", type=int, default=500
     )
     parser.add_argument(
         "--logging_steps", type=int, default=200
+    )
+    parser.add_argument(
+        "--save_steps", type=int, default=200
     )
     parser.add_argument(
         "--batch_size", type=int, default=8
@@ -200,17 +284,28 @@ if __name__ == "__main__":
         default="eager",
         help="Attention implementation to use (eager, flash_attention_2, etc.)"
     )
+    parser.add_argument(
+        "--prompt_template",
+        type=str,
+        choices=["image_sense", "image_rag_sense"],
+        default="image_sense",
+        help="Prompt template to use for training"
+    )
     
     args = parser.parse_args()
     '''args = parser.parse_args(
         [
             "--model_checkpoint", "google/gemma-3-4b-it",
             "--output_dir", "/workspace/model_dir/test",
-            "--train_file", "/workspace/data/dataset_construction_train/train_set_pos.csv",
-            "--validation_file", "/workspace/data/dataset_construction_train/val_set_pos.csv",
-            "--batch_size", "2",
+            "--train_file", "/workspace/data/train_set_process/wsd_set_entire_ambiguous_sentence_train.csv",
+            "--validation_file", "/workspace/data/train_set_process/wsd_set_entire_ambiguous_sentence_val.csv",
+            "--batch_size", "4",
             "--gradient_accumulation_steps", "2",
             "--train_epochs", "1",
+            "--learning_rate", "1e-5",
+            "--warmup_steps", "20",
+            "--logging_steps", "20",
+            "--save_steps", "20",
         ]
     )'''
     

@@ -1,0 +1,9 @@
+prompt,generated_sentence
+"the noun 'anemia' that can be interpreted as:
+ 1. a deficiency of red blood cells
+ 2. a lack of vitality
+ 3. genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America
+---
+Generate a natural ambiguous sentence using polysemous word 'anemia' once so that the sentence can be interpreted in more than one meaning.
+In the generated sentence, the noun 'anemia' should be interpreted as 'genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America'. However, the sentence should not imply any of the given definitions too strongly. The sentence should be natural and commonly used in daily life.
+Suggest your final sentence in the format 'Generated Sentence: [your sentence]'. Do not include any explanation, and end your generation after providing the sentence.",The anemia has settled in nicely by the porch.

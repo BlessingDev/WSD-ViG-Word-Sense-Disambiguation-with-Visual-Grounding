@@ -4755,7 +4755,7 @@ Directness of Meaning: Choose the sense that provides the most direct and specif
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
 "
-264,anemia,"After the marathon, the doctor confirmed her anemia.","{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,n,1,"Text Context: After the marathon, the doctor confirmed her anemia.
+264,anemia,"The anemia has settled in nicely by the porch.","{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,n,3,"Text Context: The anemia has settled in nicely by the porch.
 Ambiguous Word: anemia
 ---
 Sense List:

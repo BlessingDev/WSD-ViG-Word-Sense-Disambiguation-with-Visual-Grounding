@@ -10,7 +10,8 @@ python /workspace/generation_decoder_peft_train.py \
     --weight_decay 0.01 \
     --batch_size 2 \
     --gradient_accumulation_steps 4 \
-    --lora_ran 16 \
+    --eval_steps 200 \
+    --lora_rank 16 \
     --learning_rate 1e-4 \
     --warmup_steps 100 \
     --logging_steps 20

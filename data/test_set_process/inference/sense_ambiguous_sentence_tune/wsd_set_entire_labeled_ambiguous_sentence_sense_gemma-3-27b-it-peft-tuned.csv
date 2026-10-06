@@ -62,7 +62,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 3
+",A: 4
 3,navigate,navigate the web,"{""v"": [""travel on water propelled by wind or by other means"", ""act as the navigator in a car, plane, or vessel and plan, direct, plot the path and position of the conveyance"", ""direct carefully and safely""]}",image.1435.jpg,v,2.0,"Text Context: I asked her to navigate while I drove through downtown.
 Ambiguous Word: navigate
 ---
@@ -508,7 +508,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 3
+",A: 5
 28,bag,personal bag,"{""n"": [""a flexible container with a single opening"", ""the quantity of game taken in a particular period (usually by one person)"", ""a place that the runner must touch before scoring"", ""a container used for carrying money and small personal items or accessories (especially by women)"", ""the quantity that a bag will hold"", ""a portable rectangular container for carrying clothes"", ""an ugly or ill-tempered woman"", ""mammary gland of bovids (cows and sheep and goats)"", ""an activity that you like or at which you are superior""], ""v"": [""capture or kill, as in hunting"", ""hang loosely, like an empty bag"", ""bulge out; form a bulge outward, or be so full as to appear to bulge"", ""take unlawfully"", ""put into a bag""]}",image.4669.jpg,n,4.0,"Text Context: She left her bag on the chair.
 Ambiguous Word: bag
 ---
@@ -1148,7 +1148,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 3
+",A: 5
 58,blue,blue mood,"{""n"": [""blue color or pigment; resembling the color of the clear sky in the daytime"", ""blue clothing"", ""any organization or party whose uniforms or badges are blue"", ""the sky as viewed during daylight"", ""used to whiten laundry or hair or give it a bluish tinge"", ""the sodium salt of amobarbital that is used as a barbiturate; used as a sedative and a hypnotic"", ""any of numerous small butterflies of the family Lycaenidae""], ""v"": [""turn blue""], ""a"": [""of the color intermediate between green and violet; having a color similar to that of a clear unclouded sky; - Helen Hunt Jackson"", ""used to signify the Union forces in the American Civil War (who wore blue uniforms)"", ""filled with melancholy and despondency"", ""characterized by profanity or cursing"", ""suggestive of sexual impropriety"", ""belonging to or characteristic of the nobility or aristocracy"", ""morally rigorous and strict"", ""causing dejection""]}",image.4937.jpg,a,3.0,"Text Context: After the goodbye, she felt blue for the rest of the day.
 Ambiguous Word: blue
 ---
@@ -1467,7 +1467,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 2
 73,film,film plastic,"{""n"": [""a form of entertainment that enacts a story by sound and a sequence of images giving the illusion of continuous movement"", ""a medium that disseminates moving pictures"", ""photographic material consisting of a base of celluloid covered with a photographic emulsion; used to make negatives or transparencies"", ""a thin coating or layer"", ""a thin sheet of (usually plastic and usually transparent) material used to wrap or cover things""], ""v"": [""make a film or photograph of something"", ""record in film""]}",image.5071.jpg,n,5.0,"Text Context: She covered the bowl with film before putting it in the fridge.
 Ambiguous Word: film
 ---
@@ -1631,7 +1631,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 2
 82,mousse,barber mousse,"{""n"": [""a rich, frothy, creamy dessert made with whipped egg whites and heavy cream"", ""a light creamy dish made from fish or meat and set with gelatin"", ""toiletry consisting of an aerosol foam used in hair styling""], ""v"": [""apply a styling gel to""]}",image.5159.jpg,n,3.0,"Text Context: Before the party, she bought mousse at the corner shop.
 Ambiguous Word: mousse
 ---
@@ -3109,7 +3109,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 3
+",A: 2
 155,dummy,dummy for baby,"{""n"": [""a person who does not talk"", ""an ignorant or foolish person"", ""a figure representing the human form"", ""a cartridge containing an explosive charge but no bullet""], ""v"": [""make a dummy of""], ""a"": [""having the appearance of being real but lacking capacity to function""]}",image.5775.jpg,n,3.0,"Text Context: At the end of the day, she moved the dummy to the back room.
 Ambiguous Word: dummy
 ---
@@ -3129,7 +3129,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 3
+",A: 1
 156,chamaeleon,chamaeleon reptile,"{""n"": [""a faint constellation in the polar region of the southern hemisphere near Apus and Mensa"", ""lizard of Africa and Madagascar able to change skin color and having a projectile tongue""]}",image.5781.jpg,n,2.0,"Text Context: I found a chamaeleon in the old atlas.
 Ambiguous Word: chamaeleon
 ---
@@ -3186,7 +3186,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 4
 159,lumber,lumber club,"{""n"": [""the wood of trees cut and prepared for use as building material"", ""an implement used in baseball by the batter""], ""v"": [""move heavily or clumsily"", ""cut lumber, as in woods and forests""]}",image.1257.jpg,n,2.0,"Text Context: He left the lumber by the door before dinner.
 Ambiguous Word: lumber
 ---
@@ -4740,7 +4740,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 4
 234,mescal,mescal plant,"{""n"": [""a small spineless globe-shaped cactus; source of mescal buttons"", ""a colorless Mexican liquor distilled from fermented juices of certain desert plants of the genus Agavaceae (especially the century plant)""]}",image.6399.jpg,n,1.0,"Text Context: I left the mescal on the table.
 Ambiguous Word: mescal
 ---
@@ -5574,7 +5574,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 3
 277,beans,edible beans,"{""n"": [""any of various edible seeds of plants of the family Leguminosae used for food"", ""any of various seeds or fruits that are beans or resemble beans"", ""any of various leguminous plants grown for their edible seeds and pods"", ""informal terms for a human head""], ""v"": [""hit on the head, especially with a pitched baseball""]}",image.6764.jpg,n,1.0,"Text Context: I bought the beans at the market for dinner.
 Ambiguous Word: beans
 ---
@@ -5717,7 +5717,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 2
 284,vesta,vesta galaxy,"{""n"": [""(Roman mythology) goddess of the hearth and its fire whose flame was tended by vestal virgins; counterpart of Greek Hestia"", ""the brightest asteroid but the fourth to be discovered""]}",image.6815.jpg,n,2.0,"Text Context: I bookmarked the page on Vesta for later.
 Ambiguous Word: vesta
 ---
@@ -5852,7 +5852,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 2
+",A: 3
 290,floor,floor building,"{""n"": [""the inside lower horizontal surface (as of a room, hallway, tent, or other structure)"", ""a structure consisting of a room or set of rooms at a single position along a vertical scale"", ""a lower limit"", ""the ground on which people and animals move about"", ""the bottom surface of any lake or other body of water"", ""the lower inside surface of any hollow structure"", ""the occupants of a floor"", ""the parliamentary right to address an assembly"", ""the legislative hall where members debate and vote and conduct other business"", ""a large room in a exchange where the trading is done""], ""v"": [""surprise greatly; knock someone's socks off"", ""knock down with force""]}",image.884.jpg,n,1.0,"Text Context: The floor was cold under his feet.
 Ambiguous Word: floor
 ---
@@ -6187,7 +6187,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 4
 309,calamus,calamus plant,"{""n"": [""any tropical Asian palm of the genus Calamus; light tough stems are a source of rattan canes"", ""the aromatic root of the sweet flag used medicinally"", ""perennial marsh plant having swordlike leaves and aromatic roots"", ""a genus of Sparidae"", ""the hollow spine of a feather""]}",image.6989.jpg,n,3.0,"Text Context: I noticed the calamus by the pond growing taller after the rain.
 Ambiguous Word: calamus
 ---
@@ -6324,7 +6324,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 3
 315,bug,arthropod bug,"{""n"": [""general term for any insect or similar creeping or crawling invertebrate"", ""a fault or defect in a computer program, system, or machine"", ""a small hidden microphone; for listening secretly"", ""insects with sucking mouthparts and forewings thickened and leathery at the base; usually show incomplete metamorphosis"", ""a minute life form (especially a disease-causing bacterium); the term is not in technical use""], ""v"": [""annoy persistently"", ""tap a telephone or telegraph wire to get information""]}",image.7033.jpg,n,1.0,"Text Context: I noticed a bug by the window this morning.
 Ambiguous Word: bug
 ---
@@ -6345,7 +6345,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 4
 316,tack,tack pins,"{""n"": [""the heading or position of a vessel relative to the trim of its sails"", ""a short nail with a sharp point and a large head"", ""gear for a horse"", ""(nautical) a line (rope or chain) that regulates the angle at which a sail is set in relation to the wind"", ""(nautical) the act of changing tack"", ""sailing a zigzag course""], ""v"": [""fasten with tacks"", ""turn into the wind"", ""create by putting components or members together"", ""sew together loosely, with large stitches"", ""fix to; attach"", ""reverse (a direction, attitude, or course of action)""]}",image.7035.jpg,n,2.0,"Text Context: The tack was in the box.
 Ambiguous Word: tack
 ---
@@ -6471,7 +6471,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 2
 324,clocks,clocks weed,"{""n"": [""European weed naturalized in southwestern United States and Mexico having reddish decumbent stems with small fernlike leaves and small deep reddish-lavender flowers followed by slender fruits that stick straight up; often grown for forage"", ""a timepiece that shows the time of day""], ""v"": [""measure the time or duration of an event or action or the person who performs an action in a certain period of time""]}",image.7095.jpg,n,1.0,"Text Context: We found clocks near the back fence.
 Ambiguous Word: clocks
 ---
@@ -8457,7 +8457,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 3
 428,crop,cattle crop,"{""n"": [""the yield from plants in a single growing season"", ""a cultivated plant that is grown commercially on a large scale"", ""a collection of people or things appearing together"", ""the output of something in a season"", ""the stock or handle of a whip"", ""a pouch in many birds and some lower animals that resembles a stomach for storage and preliminary maceration of food""], ""v"": [""cut short"", ""prepare for crops"", ""yield crops"", ""let feed in a field or pasture or meadow"", ""feed as in a meadow or pasture"", ""cultivate, tend, and cut back the growth of""]}",image.7847.jpg,v,5.0,"Text Context: The rancher cropped the cattle in the field.
 Ambiguous Word: crop
 ---
@@ -8607,7 +8607,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 2
+",A: 1
 436,cat,cat feline,"{""n"": [""feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats"", ""an informal term for a youth or man"", ""a spiteful woman gossip"", ""the leaves of the shrub Catha edulis which are chewed like tobacco or used to make tea; has the effect of a euphoric stimulant"", ""a whip with nine knotted cords"", ""a large tracked vehicle that is propelled by two endless metal belts; frequently used for moving earth in construction and farm work"", ""any of several large cats typically able to roar and living in the wild"", ""a method of examining body organs by scanning them with X rays and using a computer to construct a series of cross-sectional scans along a single axis""], ""v"": [""beat with a cat-o'-nine-tails"", ""eject the contents of the stomach through the mouth""]}",image.7904.jpg,n,1.0,"Text Context: The cat on the porch was quiet.
 Ambiguous Word: cat
 ---
@@ -8816,7 +8816,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 2
+",A: 5
 446,dip,swim dip,"{""n"": [""a depression in an otherwise level surface"", ""(physics) the angle that a magnetic needle makes with the plane of the horizon"", ""a thief who steals from the pockets or purses of others in public places"", ""tasty mixture or liquid into which bite-sized foods are dipped"", ""a brief immersion"", ""a sudden sharp decrease in some quantity"", ""a candle that is made by repeated dipping in a pool of wax or tallow"", ""a brief swim in water"", ""a gymnastic exercise on the parallel bars in which the body is lowered and raised by bending and straightening the arms""], ""v"": [""immerse briefly into a liquid so as to wet, coat, or saturate"", ""dip into a liquid while eating"", ""go down momentarily"", ""stain an object by immersing it in a liquid"", ""take a small amount from"", ""switch (a car's headlights) from a higher to a lower beam"", ""lower briefly"", ""appear to move downward"", ""slope downwards"", ""dip into a liquid"", ""place (candle wicks) into hot, liquid wax"", ""immerse in a disinfectant solution"", ""plunge (one's hand or a receptacle) into a container"", ""scoop up by plunging one's hand or a ladle below the surface""]}",image.7975.jpg,v,10.0,"Text Context: As she stirred, the spoon dipped into the tea for a moment.
 Ambiguous Word: dip
 ---
@@ -8846,7 +8846,7 @@ First, take a look at the 'Text Context' and the image. Leverage both context to
 Directness of Meaning: If no additional background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
-",A: 1
+",A: 10
 447,rubber,school rubber,"{""n"": [""an elastic material obtained from the latex sap of trees (especially trees of the genera Hevea and Ficus) that can be vulcanized and finished into a variety of products"", ""any of various synthetic elastic materials whose properties resemble natural rubber"", ""an eraser made of rubber (or of a synthetic material with properties similar to rubber); commonly mounted at one end of a pencil"", ""contraceptive device consisting of a sheath of thin rubber or latex that is worn over the penis during intercourse"", ""a waterproof overshoe that protects shoes from water or snow""], ""v"": [""coat or impregnate with rubber""], ""a"": [""returned for lack of funds""]}",image.8.jpg,n,3.0,"Text Context: I forgot my rubber again.
 Ambiguous Word: rubber
 ---

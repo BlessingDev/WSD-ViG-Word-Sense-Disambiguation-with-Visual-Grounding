@@ -213,7 +213,7 @@ def change_summarize_prompt(summarize_set_path, prompt_template, search_result_p
     return summarize_df
 
 if __name__ == "__main__":
-    from nltk.corpus import wordnet as wn
+    """from nltk.corpus import wordnet as wn
     import evaluate
     
     bleurt_cp = "/workspace/BLEURT-20/"    
@@ -227,4 +227,23 @@ if __name__ == "__main__":
         for idx2 in range(idx1 + 1, len(word_senses)):
             sense2_def = word_senses[idx2].definition().replace("(", " ").replace(")", " ").strip() + ' '.join(word_senses[idx2].lemma_names())
             score = scorer.compute(predictions=[sense2_def], references=[sense1_def], model_type="google/byt5-large")
-            print(f"BERTScore between sense {idx1} and sense {idx2}: {score['f1'][0]}")
+            print(f"BERTScore between sense {idx1} and sense {idx2}: {score['f1'][0]}")"""
+            
+    new_prompt_template = """Ambiguous word: {word}
+Context Sentence: {context}
+Entities in Image: 
+{entities}
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: {web_title}
+{web_content}
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of '{word}' in '{context}' or 2) it is helpful to the image related to '{word}'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation."""
+    change_summarize_prompt(
+        summarize_set_path="/workspace/data/train_set_process/wsd_set_entire_summarize_prompt.csv",
+        prompt_template=new_prompt_template,
+        search_result_path="/workspace/data/train_set_process/wsd_set_entire_ambiguous_sentence_search_result.csv",
+        format_template=["word", "context", "web_title", "web_content", "entities"]
+    )

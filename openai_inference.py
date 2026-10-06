@@ -40,9 +40,25 @@ if __name__ == "__main__":
     parser.add_argument("--output_path", type=str, required=True, help="Path to save the output CSV file")
     
     args = parser.parse_args()
+    '''args = parser.parse_args([
+        "--gpt_model", "gpt-5.4-mini",
+        "--reasoning_effort", "medium",
+        "--wsd_set_path", "/workspace/data/test_set_process/wsd_set_entire_labeled_ambiguous_sentence_sense_prompt.csv",
+        "--output_path", "/workspace/data/test_set_process/wsd_set_anemia.csv"
+    ])'''
     
     print(f"Loading WSD set from: {args.wsd_set_path}")
     df = pd.read_csv(args.wsd_set_path)
+    '''df = pd.DataFrame({
+        "prompt": ["""the noun 'anemia' that can be interpreted as:
+ 1. a deficiency of red blood cells
+ 2. a lack of vitality
+ 3. genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America
+---
+Generate a natural ambiguous sentence using polysemous word 'anemia' once so that the sentence can be interpreted in more than one meaning.
+In the generated sentence, the noun 'anemia' should be interpreted as 'genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America'. However, the sentence should not imply any of the given definitions too strongly. The sentence should be natural and commonly used in daily life.
+Suggest your final sentence in the format 'Generated Sentence: [your sentence]'. Do not include any explanation, and end your generation after providing the sentence."""]
+    })'''
     answer_list = list()
     
     for idx, row in tqdm(df.iterrows(), total=len(df), desc="Generating sentences"):

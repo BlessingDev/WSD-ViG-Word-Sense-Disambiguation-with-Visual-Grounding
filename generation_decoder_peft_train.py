@@ -110,8 +110,10 @@ def main(args):
 
     training_args = SFTConfig(
         output_dir=args.output_dir,
-        eval_strategy="epoch",
-        save_strategy="epoch",
+        eval_strategy="steps",
+        save_strategy="steps",
+        eval_steps=args.eval_steps,
+        save_steps=args.eval_steps,
         do_train=True,
         do_eval=True,
         packing=False,
@@ -171,6 +173,7 @@ if __name__ == "__main__":
     parser.add_argument("--logging_steps", type=int, default=20)
     parser.add_argument("--batch_size", type=int, default=2)
     parser.add_argument("--lora_rank", type=int, default=32)
+    parser.add_argument("--eval_steps", type=int, default=100)
     parser.add_argument("--resume_from_checkpoint", action="store_true")
     parser.add_argument(
         "--gradient_accumulation_steps",

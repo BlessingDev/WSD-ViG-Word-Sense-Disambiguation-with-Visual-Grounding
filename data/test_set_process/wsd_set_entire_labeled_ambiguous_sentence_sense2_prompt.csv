@@ -5301,7 +5301,7 @@ Directness of Meaning: If no additional background information can be obtained f
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
 "
-264,anemia,tropical anemia,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,n,1.0,"Text Context: After weeks of poor sleep, her anemia seemed to be getting worse.
+264,anemia,tropical anemia,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,n,3.0,"Text Context: The anemia has settled in nicely by the porch.
 Ambiguous Word: anemia
 ---
 Sense List:

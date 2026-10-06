@@ -1,0 +1,170 @@
+word_index,word,word_phrase,senses,gold_image,gold_pos,gold_sense,prompt,generated_text
+209,dressing,She spent the morning dressing the roses by the fence.,"{""n"": [""savory dressings for salads; basically of two kinds: either the thin French or vinaigrette type or the creamy mayonnaise type"", ""a mixture of seasoned ingredients used to stuff meats and vegetables"", ""making fertile as by applying fertilizer or manure"", ""a cloth covering for a wound or sore"", ""processes in the conversion of rough hides into leather"", ""the activity of getting dressed; putting on clothes"", ""the act of applying a bandage""], ""v"": [""put on clothes"", ""provide with clothes or put clothes on"", ""put a finish on"", ""dress in a certain manner"", ""dress or groom with elaborate care"", ""kill and prepare for market or consumption"", ""arrange in ranks"", ""decorate (food), as with parsley or other ornamental foods"", ""provide with decoration"", ""put a dressing on"", ""cultivate, tend, and cut back the growth of"", ""cut down rough-hewn (lumber) to standard thickness and width"", ""convert into leather"", ""apply a bandage or medication to"", ""give a neat appearance to"", ""arrange attractively""]}",image.6203.jpg,v,11.0,"Text Context: She spent the morning dressing the roses by the fence.
+Ambiguous Word: dressing
+---
+Sense List:
+ 1. put on clothes
+ 2. provide with clothes or put clothes on
+ 3. put a finish on
+ 4. dress in a certain manner
+ 5. dress or groom with elaborate care
+ 6. kill and prepare for market or consumption
+ 7. arrange in ranks
+ 8. decorate (food), as with parsley or other ornamental foods
+ 9. provide with decoration
+ 10. put a dressing on
+ 11. cultivate, tend, and cut back the growth of
+ 12. cut down rough-hewn (lumber) to standard thickness and width
+ 13. convert into leather
+ 14. apply a bandage or medication to
+ 15. give a neat appearance to
+ 16. arrange attractively
+---
+Image Web Search Results:
+The search results provide information about fertilizers, which is relevant to the context of the image. The term ""dressing"" in the context of gardening can refer to the application of fertilizer or other soil amendments to plants. In the image, the person appears to be applying something to the soil, which could be fertilizer. The search results confirm that fertilizers are used to nourish plants and improve soil quality, which aligns with the action depicted in the image. Therefore, the context of ""dressing"" in the sentence likely refers to the application of fertilizer to the roses, similar to how the person in the image is applying something to the soil.
+---
+You are an expert linguistic annotator. A specific target word found within the context of a given text, and a list of potential senses for that word are provided. Your task is to determine the correct sense by selecting the one that most directly aligns with the context and its background event.
+---
+Decision Logic & Rules
+Follow these rules in order of priority to make your decision:
+
+First, take a look at the given context: The image, 'Text Context', and 'Image Web Search Results'. Leverage those context to analyze any significant background context is provided in the image. If such information exists, prioritize the sense that best fits this background information, even if it is not the most direct match for the visual content.
+
+Directness of Meaning: If no meaningful background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
+---
+After all your reasoning is finished, read through the list of senses provided once again, carefully and in detail, one by one. Then, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
+","The image shows a person working in a field, seemingly applying something to the soil near young plants. The text context mentions ""dressing the roses."" The image web search results point to fertilizers as a relevant meaning of ""dressing"" in a gardening context. Considering this, the most appropriate sense of ""dressing"" is the one related to cultivating or applying nutrients to plants.
+
+Looking at the sense list, sense 11, ""cultivate, tend, and cut back the growth of,"" and sense 10, ""put a dressing on,"" are the most relevant. However, sense 10 is more directly related to applying something *to* the plants or soil, which is what the image depicts.
+
+A: 10"
+261,aurora,Aurora woke the house before breakfast.,"{""n"": [""the first light of day"", ""an atmospheric phenomenon consisting of bands of light caused by charged solar particles following the earth's magnetic lines of force"", ""(Roman mythology) goddess of the dawn; counterpart of Greek Eos""]}",image.6632.jpg,n,3.0,"Text Context: Aurora woke the house before breakfast.
+Ambiguous Word: aurora
+---
+Sense List:
+ 1. the first light of day
+ 2. an atmospheric phenomenon consisting of bands of light caused by charged solar particles following the earth's magnetic lines of force
+ 3. (Roman mythology) goddess of the dawn; counterpart of Greek Eos
+---
+Image Web Search Results:
+The 'Searched Web Content' provides information about Tchaikovsky's ballet ""Sleeping Beauty,"" which is based on the fairy tale ""La Belle au bois dormant"" (The Beauty Sleeping in the Woods) by Charles Perrault. The content mentions that Princess Aurora is the main character in the ballet, and it describes the famous ""Rose Adagio"" scene where Princess Aurora meets the princes. This information is relevant because the image is titled ""PRINCE FLORIMOND FINDS THE SLEEPING BEAUTY,"" which aligns with the story of Sleeping Beauty. The ambiguous word ""aurora"" in the context sentence ""Aurora woke the house before breakfast"" likely refers to Princess Aurora from the Sleeping Beauty story, as the image depicts a scene from this fairy tale. The content helps clarify that ""Aurora"" is a character name in the Sleeping Beauty narrative, which is the context for the image.
+---
+You are an expert linguistic annotator. A specific target word found within the context of a given text, and a list of potential senses for that word are provided. Your task is to determine the correct sense by selecting the one that most directly aligns with the context and its background event.
+---
+Decision Logic & Rules
+Follow these rules in order of priority to make your decision:
+
+First, take a look at the given context: The image, 'Text Context', and 'Image Web Search Results'. Leverage those context to analyze any significant background context is provided in the image. If such information exists, prioritize the sense that best fits this background information, even if it is not the most direct match for the visual content.
+
+Directness of Meaning: If no meaningful background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
+---
+After all your reasoning is finished, read through the list of senses provided once again, carefully and in detail, one by one. Then, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
+","The image depicts a scene from the fairy tale ""Sleeping Beauty,"" titled ""PRINCE FLORIMOND FINDS THE SLEEPING BEAUTY."" The web search results confirm that ""Aurora"" is the name of the princess in the story. The context sentence ""Aurora woke the house before breakfast"" refers to the princess waking up. Therefore, the correct sense of ""aurora"" is the name of the princess, not the atmospheric phenomenon or the Roman goddess.
+
+A: 1"
+276,watch,I watched the birds in the tree.,"{""n"": [""a small portable timepiece"", ""a period of time (4 or 2 hours) during which some of a ship's crew are on duty"", ""a purposeful surveillance to guard or observe"", ""the period during which someone (especially a guard) is on duty"", ""a person employed to keep watch for some anticipated event"", ""the rite of staying awake for devotional purposes (especially on the eve of a religious festival)""], ""v"": [""look attentively"", ""follow with the eyes or the mind"", ""see or watch"", ""observe with attention"", ""be vigilant, be on the lookout or be careful"", ""observe or determine by looking"", ""find out, learn, or determine with certainty, usually by making an inquiry or other effort""]}",image.6758.jpg,v,1.0,"Text Context: I watched the birds in the tree.
+Ambiguous Word: watch
+---
+Sense List:
+ 1. look attentively
+ 2. follow with the eyes or the mind
+ 3. see or watch
+ 4. observe with attention
+ 5. be vigilant, be on the lookout or be careful
+ 6. observe or determine by looking
+ 7. find out, learn, or determine with certainty, usually by making an inquiry or other effort
+---
+Image Web Search Results:
+The search results include a file named ""Alte Pinakothek − Visitors watch paintings.JPG,"" which shows visitors observing paintings in an art gallery. This context is relevant because it demonstrates the use of ""watch"" in the sense of observing or viewing art, similar to how ""watch"" is used in the context sentence ""I watched the birds in the tree."" Both instances involve the act of observing something, whether it's birds or paintings. This helps clarify that ""watch"" in the context sentence refers to the action of looking at or observing.
+---
+You are an expert linguistic annotator. A specific target word found within the context of a given text, and a list of potential senses for that word are provided. Your task is to determine the correct sense by selecting the one that most directly aligns with the context and its background event.
+---
+Decision Logic & Rules
+Follow these rules in order of priority to make your decision:
+
+First, take a look at the given context: The image, 'Text Context', and 'Image Web Search Results'. Leverage those context to analyze any significant background context is provided in the image. If such information exists, prioritize the sense that best fits this background information, even if it is not the most direct match for the visual content.
+
+Directness of Meaning: If no meaningful background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
+---
+After all your reasoning is finished, read through the list of senses provided once again, carefully and in detail, one by one. Then, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
+","The image shows people watching paintings in an art gallery. The text context is ""I watched the birds in the tree."" The image web search results confirm that ""watch"" can mean to observe or view, as in watching paintings. This aligns with the context of watching birds. Therefore, the most appropriate sense of ""watch"" is to look attentively or observe with attention.
+
+A: 4"
+302,absinthe,I found absinthe in the cupboard.,"{""n"": [""aromatic herb of temperate Eurasia and North Africa having a bitter taste used in making the liqueur absinthe"", ""strong green liqueur flavored with wormwood and anise""]}",image.1705.jpg,n,1.0,"Text Context: I found absinthe in the cupboard.
+Ambiguous Word: absinthe
+---
+Sense List:
+ 1. aromatic herb of temperate Eurasia and North Africa having a bitter taste used in making the liqueur absinthe
+ 2. strong green liqueur flavored with wormwood and anise
+---
+Image Web Search Results:
+The Searched Web Content explains that ""Wormwood (Artemisia absinthium) is naturally found in Anatolia from the daisy family (Asteraceae)."" This is relevant because the 'Entities in Image' section lists ""Common wormwood,"" which is the same as Artemisia absinthium. The context sentence mentions ""absinthe,"" which is derived from wormwood. The content also notes that wormwood has been used in medicine since ancient times, which may explain why it could be found in a cupboard. This information helps clarify that ""absinthe"" in the context sentence likely refers to a product derived from wormwood, which is the plant shown in the image.
+---
+You are an expert linguistic annotator. A specific target word found within the context of a given text, and a list of potential senses for that word are provided. Your task is to determine the correct sense by selecting the one that most directly aligns with the context and its background event.
+---
+Decision Logic & Rules
+Follow these rules in order of priority to make your decision:
+
+First, take a look at the given context: The image, 'Text Context', and 'Image Web Search Results'. Leverage those context to analyze any significant background context is provided in the image. If such information exists, prioritize the sense that best fits this background information, even if it is not the most direct match for the visual content.
+
+Directness of Meaning: If no meaningful background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
+---
+After all your reasoning is finished, read through the list of senses provided once again, carefully and in detail, one by one. Then, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
+","The image shows a plant identified as wormwood (Artemisia absinthium) in the web search results. The text context mentions finding ""absinthe"" in the cupboard. The web search results explain that absinthe is a liqueur *made from* wormwood. Therefore, the ""absinthe"" in the context refers to the liqueur, not the plant itself.
+
+A: 2"
+342,crossroads,We stopped in Crossroads for coffee on our way home.,"{""n"": [""a community of people smaller than a village"", ""a crisis situation or point in time when a critical decision must be made"", ""a point where a choice must be made"", ""a junction where one street or road crosses another""]}",image.7232.jpg,n,1.0,"Text Context: We stopped in Crossroads for coffee on our way home.
+Ambiguous Word: crossroads
+---
+Sense List:
+ 1. a community of people smaller than a village
+ 2. a crisis situation or point in time when a critical decision must be made
+ 3. a point where a choice must be made
+ 4. a junction where one street or road crosses another
+---
+Image Web Search Results:
+
+---
+You are an expert linguistic annotator. A specific target word found within the context of a given text, and a list of potential senses for that word are provided. Your task is to determine the correct sense by selecting the one that most directly aligns with the context and its background event.
+---
+Decision Logic & Rules
+Follow these rules in order of priority to make your decision:
+
+First, take a look at the given context: The image, 'Text Context', and 'Image Web Search Results'. Leverage those context to analyze any significant background context is provided in the image. If such information exists, prioritize the sense that best fits this background information, even if it is not the most direct match for the visual content.
+
+Directness of Meaning: If no meaningful background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
+---
+After all your reasoning is finished, read through the list of senses provided once again, carefully and in detail, one by one. Then, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
+","The image depicts a rural landscape with farmhouses and fields. This suggests a physical location, a place where roads might intersect. The text mentions stopping for coffee ""on our way home,"" implying a journey and potentially a place where routes meet.
+
+Considering the context, sense 4, ""a junction where one street or road crosses another,"" is the most fitting. The name ""Crossroads"" likely refers to a small settlement at a road junction.
+
+A: 4"
+363,beaver,"Before the wedding, he polished his beaver and placed it on the table.","{""n"": [""the soft brown fur of the beaver"", ""a native or resident of Oregon"", ""a full beard"", ""a man's hat with a tall crown; usually covered with silk or with beaver fur"", ""a movable piece of armor on a medieval helmet used to protect the lower face"", ""a hat made with the fur of a beaver (or similar material)"", ""large semiaquatic rodent with webbed hind feet and a broad flat tail; construct complex dams and underwater lodges""], ""v"": [""work hard on something""]}",image.2086.jpg,n,4.0,"Text Context: Before the wedding, he polished his beaver and placed it on the table.
+Ambiguous Word: beaver
+---
+Sense List:
+ 1. the soft brown fur of the beaver
+ 2. a native or resident of Oregon
+ 3. a full beard
+ 4. a man's hat with a tall crown; usually covered with silk or with beaver fur
+ 5. a movable piece of armor on a medieval helmet used to protect the lower face
+ 6. a hat made with the fur of a beaver (or similar material)
+ 7. large semiaquatic rodent with webbed hind feet and a broad flat tail; construct complex dams and underwater lodges
+---
+Image Web Search Results:
+The 'Searched Web Content' includes references to 'Hat Ideas', 'Fancy Hats', and 'Movie Costumes', which are related to the image of a top hat. The ambiguous word 'beaver' in the context sentence likely refers to a type of hat, specifically a beaver hat, which is a style of hat made from beaver fur. This is supported by the context of the sentence where the hat is being polished and placed on a table, indicating it is a piece of headwear. The content also mentions 'Vintage Winter Outerwear' and '1950s Winter Hats', which could be related to the style of the hat in the image.
+---
+You are an expert linguistic annotator. A specific target word found within the context of a given text, and a list of potential senses for that word are provided. Your task is to determine the correct sense by selecting the one that most directly aligns with the context and its background event.
+---
+Decision Logic & Rules
+Follow these rules in order of priority to make your decision:
+
+First, take a look at the given context: The image, 'Text Context', and 'Image Web Search Results'. Leverage those context to analyze any significant background context is provided in the image. If such information exists, prioritize the sense that best fits this background information, even if it is not the most direct match for the visual content.
+
+Directness of Meaning: If no meaningful background information can be obtained from the web search results, choose the sense that provides the most direct and specific fit for the visual and linguistic context. Even if a perfect match does not exist, select the sense that is the closest indirect match.
+---
+After all your reasoning is finished, read through the list of senses provided once again, carefully and in detail, one by one. Then, provide your final decision as the format 'A: [sense number]' and end your generation. In here, [sense number] is the index of your chosen sense from the provided list.
+","The image shows a top hat. The text mentions polishing a ""beaver"" and placing it on a table. The web search results confirm that ""beaver"" can refer to a type of hat. Considering the context of polishing and placing on a table, it's clear the ""beaver"" is an item of clothing, specifically a hat. Sense 4 and 6 both refer to hats, but sense 4 is more general (""a man's hat with a tall crown"") while sense 6 specifies it's *made* with beaver fur. Given the historical context of top hats often being made with beaver fur, and the fact that the word ""beaver"" is used as a descriptor for the hat itself, sense 6 is the most accurate.
+
+A: 6"

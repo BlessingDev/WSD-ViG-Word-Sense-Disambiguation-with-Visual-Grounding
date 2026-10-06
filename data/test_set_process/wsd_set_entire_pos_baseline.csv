@@ -8865,7 +8865,7 @@ Always consider which sense can be most directly and concretely represented in t
 ---
 After all your reasoning is finished, provide your final decision as the format 'A: [POS]', where [POS] is your chosen Part of Speech (noun, verb).
 "
-264,anemia,tropical anemia,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,n,1,"
+264,anemia,tropical anemia,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,n,3,"
 Ambiguous word: anemia
 ---
 Noun Senses:

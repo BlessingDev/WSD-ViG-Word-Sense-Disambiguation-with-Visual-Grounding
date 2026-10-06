@@ -1,12 +1,17 @@
 import trafilatura
 import requests
 import json
+import time
 import pandas as pd
 from tqdm.auto import tqdm
 
 def extract_clean_text(url):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    }
+    time.sleep(0.1)  # 0.1초 대기
     try:
-        response = requests.head(url, timeout=10)
+        response = requests.head(url, timeout=10, headers=headers)
     except:
         return None
 
@@ -86,7 +91,7 @@ def main(args):
         retrieved_urls = json.loads(retrieved_rows["web_urls"].iloc[0])
         retrieved_entities = json.loads(retrieved_rows["entities"].iloc[0])
         if len(retrieved_entities) > 0:
-            entity_score_threshold = 0.8
+            entity_score_threshold = 0.9
             valid_entites = []
             for entity in retrieved_entities:
                 if entity["score"] >= entity_score_threshold:
@@ -156,7 +161,7 @@ def main(args):
         # 마지막으로 3개 추가하는 동안 등장한 None 페이지 제목들을 한꺼번에 요약하도록 프롬프트 생성
         if len(none_page_titles) > 0:
             none_page_titles_str = "\n".join([f"- {title}" for title in none_page_titles])
-            prompt = prompt_template.format(word=row["word"], context=row["word_phrase"], entities=valid_entites, web_title=none_page_titles_str, web_content="")
+            prompt = prompt_template.format(word=row["word"], context=row["word_phrase"], entities=valid_entites, web_title="Titles of Other Web Pages", web_content=none_page_titles_str)
             df_dict["word_index"].append(word_index)
             df_dict["word"].append(row["word"])
             df_dict["word_phrase"].append(row["word_phrase"])
@@ -175,5 +180,11 @@ if __name__ == "__main__":
     parser.add_argument("--output_path", type=str, default="/workspace/data/test_set_process/wsd_set_entire_summarize_prompt.csv")
     parser.add_argument("--prompt_type", type=str, default="phrase", choices=["phrase", "sentence", "ambig_sentence"], help="Whether to use the original word phrase or the generated ambiguous sentence as context in the prompt")
     args = parser.parse_args()
+    '''args = parser.parse_args([
+        "--wsd_set_path", "/workspace/data/test_set_process/wsd_set_entire_labeled_ambiguous_sentence.csv",
+        "--retrieval_result_path", "/workspace/data/test_set_process/wsd_set_entire_google_vision_result.csv",
+        "--output_path", "/workspace/data/test_set_process/test.csv",
+        "--prompt_type", "ambig_sentence"
+    ])'''
     
     main(args)

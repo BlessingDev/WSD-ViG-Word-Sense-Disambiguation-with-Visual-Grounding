@@ -1,0 +1,417 @@
+word_index,word,word_phrase,senses,gold_image,prompt,generated_text
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Managing Treatment-Emergent Anemia in a Patient With Myelofibrosis
+
+Dr. John Mascarenhas:
+Welcome to The ASCO Post Roundtable Series on Addressing Unmet Needs in Myelofibrosis. I'm Dr. John Mascarenhas from the Icahn School of Medicine at Mount Sinai in New York. I'm really happy to be joined by two of my colleagues and friends, Dr. Gabriela Hobbs and Dr. Abe Yacoub. Gaby, maybe you could introduce yourself?
+Dr. Gabriela Hobbs:
+Hi, everyone. Thank you for having me today. I'm Gaby Hobbs. I'm the Clinical Director of the leukemia service at Mass General Hospital in Boston, and I specialize in the care of patients with myeloproliferative neoplasms.
+Dr. Mascarenhas:
+Abe?
+Dr. Abdulraheem Yacoub:
+Hello, my name is Dr. Abdulraheem Yacoub. I go by Abe. I'm a Professor of Medicine at the University of Kansas Cancer Center and I specialize in MPN and myeloid cancers.
+Dr. Mascarenhas:
+Fantastic. Today we have a great roundtable of experts that are focused on myeloid malignancies and specifically myelofibrosis. We're going to be discussing the treatment and management of myelofibrosis with three patient case studies and vignettes. This is our first installment with a focus on managing emergent anemia on ruxolitinib.
+Case 1 is a patient, Mr. RH. He's 77 with a history of polycythemia vera diagnosed 10 years ago and treated with hydroxyurea. Now he's developed anemia, progressive splenomegaly, and drenching night sweats. On exam, he's got temporal wasting and a spleen that's easily palpated 10 cm below the left costal margin and tender with deep palpation.
+His white count is 29,000, his hemoglobin is 9.8, platelets are 500,000, 2% blast on manual review of the smear, and the LDH is 800. A bone marrow biopsy is obtained and shows that it's hypercellular, with maturation of all three lineages, atypical megakaryocytes in loose and tight clusters, and less than 5% blast by immunohistochemical staining. The bone marrow fibrosis grade is 3 out of 3, so dense fibrosis, and the karyotype is normal. On sequencing he has a JAK2 V617F mutation with a VAF of 75%, a TET2 mutation with a VAF of 25%, and an ASXL1 mutation with a VAF of 10%.
+By prognostic scoring systems, no matter which one you use, whether it's the DIPSS-plus, the MIPSS-70, or the MYSEC, he would be considered on the higher risk end of that score, either intermediate-2 or high risk based on certain clinical variables, and also now increasingly integrating genomic data as well.
+This gentleman with high-risk myelofibrosis that's both symptomatic with a large spleen is started on ruxolitinib 20 mg twice daily and has immediate resolution of symptoms, as many patients do. After 6 months of therapy, the spleen is no longer palpable, but the anemia progressively worsens down to 7.2 g/dL and the patient does note more dyspnea on exertion at 9 months of therapy.
+The question for the group that we're going to discuss is how do we address anemia and what are the treatment options to address anemia in an MF patient receiving ruxolitinib, but also achieving goal-directed success in terms of spleen and symptom burden and maybe what additional data points would assist in decision making. I'll start with that and maybe I'll ask Gaby to jump in and give me a sense of what would she do with this gentleman? Older gentleman, higher-risk disease, doing well from a perspective of spleen and symptom burden response with ruxolitinib, but hasn't really enjoyed any anemia benefit. I guess the first question is would you expect it with ruxolitinib? Is this characteristic and how would you approach a patient where anemia is becoming a problem?
+Dr. Hobbs:
+Lots of great clinical points to discuss. I think from an anemia perspective, unfortunately with ruxolitinib we generally don't expect to see an anemia improvement. Sometimes we would expect, if you shrink the spleen significantly, perhaps you're going to see less splenic sequestration and anemia improvement. But I can't say that I see that ever with ruxolitinib, so I wouldn't have expected an anemia benefit.
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content discusses anemia as a complication in patients with myelofibrosis (MF), particularly those undergoing treatment with ruxolitinib. According to the experts, anemia is a common side effect of ruxolitinib and is *not* expected to improve with the medication. In fact, it can worsen over time, as seen in the case study presented, where a patient's hemoglobin levels decreased from 9.8 g/dL to 7.2 g/dL after 6 months of ruxolitinib therapy. The context sentence ""The anemia has settled in nicely by the porch"" is likely a humorous or ironic statement, implying that the plant (likely a type of fern, as seen in the image) *resembles* a plant commonly called ""anemia"" (likely referring to *Anemia* genus plants) and is thriving in that location, rather than referring to the medical condition. The image shows a plant, and the web content provides context for the word ""anemia"" as a plant name, clarifying the ambiguity in the sentence."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Managing Treatment-Emergent Anemia in a Patient With Myelofibrosis
+Oftentimes we do see a dip that occurs in the hemoglobin when ruxolitinib is first initiated. It's probably most pronounced in the first month and then tends to kind of plateau. For some patients, it doesn't really plateau like we see in this patient. It just kind of continues to go down. And although we know that the prognostic significance of having anemia that occurs in the context of ruxolitinib is not as detrimental to prognosis as anemia that occurs just de novo, it's still pretty clinically meaningful in a patient like this one where they used to have a hemoglobin in the 9s and didn't need transfusions and now they have a hemoglobin in the 7s and maybe need transfusions, especially an older gentlemen. So I think that's a pretty significant issue.
+One thing I wanted to address before we talked about the anemia improvement is with this new diagnosis of myelofibrosis and discussing the risk scores, it's just reminding us that patients that have intermediate-2 or greater disease by DIPSS or higher-risk disease by the other scores, the MIPSS, warrant a consideration of a bone marrow transplant at diagnosis of myelofibrosis. And of course in this case, this gentleman is older, but I think it's worth at least addressing even if that person is not going to go to transplant to say, would this be a very functional person that would merit a consideration for transplant at all, or should we just assume that based on his age he's not a candidate? And of course in the higher 70s, most people wouldn't offer a transplant, but it's worth at least mentioning.
+Dr. Mascarenhas:
+Excellent. Abe, you're seeing this guy who is benefiting from the classic response assessment aspects of spleen and symptom with ruxolitinib, but continues to have anemia. I totally agree with Gaby, we don't expect an anemia response with ruxolitinib, and in fact, there's usually this characteristic dip. Sometimes it gets better, sometimes it doesn't. I look at anemia that's emergent right after starting ruxolitinib differently than anemia that emerges like 6 months after starting ruxolitinib. That's probably more disease-related anemia. So this guy, I would say, is not optimally controlled from a disease perspective if he's got anemia that's causing symptomatology. The question for you is what other data points would be helpful in deciding what to do next?
+Dr. Yacoub:
+Thank you very much, John. I think this is such a common and a true challenge that we will actually almost universally have to cross with every patient with myelofibrosis, especially with ruxolitinib therapy, that it's very helpful for us providers and for patients and for everybody who takes care of these patients to have a set of scales or a standardized approach to try to tackle anemia and myelofibrosis. This will keep coming and will keep happening and it's very common, and even though it is not necessarily prognostically adverse, having anemia from therapy, it is definitely a quality-of-life challenge. Transfusions become significantly resource consuming and just not necessarily favorable by any aspects of patient care. So it's very important that we have a general approach to this.
+It is expected from with ruxolitinib that anemia is going to happen and it is dose-dependent. One approach would be to tailor the ruxolitinib dose to mitigate the anemia. Unfortunately, that could also be associated with less effectiveness in depth of response. So that remains always a maneuvering scale that we can use in these patients.
+But anemia in myelofibrosis is multifactorial. Some of it is part of the disease and the therapy, but also we have to have a global approach to this. So any reversible risk factors that can be identified, whether patients have nutritional deficiency or any ongoing blood loss, any of the other common causes for anemia can and could happen and could be manageable in these patients. So that becomes the low-hanging fruit approach to reverse any reversible factors just like any other patients.
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The context sentence ""The anemia has settled in nicely by the porch"" is likely a misinterpretation or humorous use of the word ""anemone,"" a type of flowering plant. The image shows plants, specifically *Aspidistra elatior* (Cast Iron Plant) and what appear to be *Acidanthera* (Gladiolus family), not a medical condition. 
+
+The searched web content discusses anemia as a medical condition, specifically treatment-emergent anemia in patients with myelofibrosis. It details how anemia can occur as a side effect of ruxolitinib treatment, its impact on quality of life, and approaches to managing it. This information is not relevant to the image, which depicts plants and suggests a confusion between ""anemia"" (the medical condition) and ""anemone"" (the flower)."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Managing Treatment-Emergent Anemia in a Patient With Myelofibrosis
+And then, since we've had ruxolitinib for the last 10 years, and there are a set of standard-of-care options that have been tested and tried. One approach to this is to try to add anemia active agents, and there are a few of those agents that we have found true activity for and they're listed on our guidelines like ESAs and danazol and thalidomide. We can go over some of those options in a little more depth and in more details. We also have more promising agents in clinical trials that may become more approved as combination with ruxolitinib like luspatercept, and there are also novel JAK inhibitors that might have effective cancer control approach with immunotherapy. So we do have a few tools that we can explore today in how we can tackle this disease and how can we help these patients.
+Dr. Mascarenhas:
+Okay, excellent. I'll give you some more data and then we can decide amongst the three of us what we would actually do here. So this individual has an EPO level of 100, the iron studies are normal, the ferritin is 200, the reticulocyte count is 2.3%, and as you pointed out, you've got to make sure that the things that are easy to address like B12 and folic acid are normal, haptoglobin is normal, and importantly a guaiac is negative, and he had a recent colonoscopy. That's negative. So there's no GI bleeding, there's no nutritional deficiencies that we can address, there's not hemolysis, and there's a sense that the EPO level may not be adequate enough in a patient like this in order to maximize erythropoiesis. I'll go back to Gaby. With this information, does it help you make a decision at this point what to do?
+Dr. Hobbs:
+Yeah, I think we have enough information to think about a different approach in treatment, and a little bit is what Abe was talking about. Do you consider lowering the dose of ruxolitinib initially, seeing if you get a little bit of a recovery of blood counts? I would say just anecdotally, I rarely see huge improvements in the cytopenias when you reduce the dose of ruxolitinib. It's not as responsive as, for example, when you stop the hydroxyurea and sometimes you see improvements in the PV patients. So that's, I think, an easy initial approach that is probably most practical in clinical practice.
+But then really the difficult question is to decide do we add on therapy to ruxolitinib? Because this person has had a really fantastic response. They were really symptomatic the way the patient is described initially with temporal wasting, systemic symptoms, a really enlarged spleen. Ruxolitinib is an excellent JAK inhibitor to control all those things that you really don't want to lose that while you switch to, for example, another JAK inhibitor. So I think I would really have a conversation with the patient about, ""Do we keep you on ruxolitinib and try to add, for example, a erythropoietin-stimulating agent."" That's a pretty easy maneuver. It's not associated with more toxicity. I think the hardest part of having the ESA is just that the patient requires maybe more frequent visits to clinic or sometimes it's difficult to administer this at home or get it approved to be given at home. So the conversation that I would have would be between adding an ESA or considering switching to a newer agent such as momelotinib.
+Dr. Mascarenhas:
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content discusses anemia as a medical condition, specifically in the context of myelofibrosis treatment. It details approaches to managing treatment-emergent anemia, including adding anemia-active agents like ESAs (erythropoietin-stimulating agents) or considering alternative JAK inhibitors like momelotinib. The conversation between doctors focuses on a patient experiencing anemia alongside other symptoms and explores treatment options while aiming to maintain the benefits of existing medication (ruxolitinib).
+
+Given this context, the sentence ""The anemia has settled in nicely by the porch"" is likely a metaphorical or humorous statement. It suggests the plant in the image, which is commonly referred to as ""anemia"" (likely *Anemia fulgens*), is thriving and well-established in its location near the porch. The medical context of anemia is unrelated to the plant's name in this case."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Managing Treatment-Emergent Anemia in a Patient With Myelofibrosis
+Excellent and I agree with you. I think the challenge often is, if you are trying to reduce the anemia by reducing the dose of ruxolitinib, I often find that that doesn't really correct the anemia in a meaningful way. And often then what you start doing is compromising the spleen and symptom benefit. So it really becomes a defeating approach. And if someone is enjoying spleen and symptom benefit as this person is, and to me often the first line of therapy would be trying to add something that's been used and doesn't interfere with a spleen symptom benefit in the face of ruxolitinib like an ESA, and if that doesn't work, maybe moving on. In this individual, Abe, let's say an ESA is used, and after 3 months of therapy it's not really improving the hemoglobin, what would you consider in this patient?
+Dr. Yacoub:
+Obviously every agent we have for anemia will have a percentage or likelihood of working in the proportion of patients. There isn't really one drug that will be the ubiquitous active agent for anemia in most patients. And that really stems from the pathophysiology of anemia is different in different patients. So in the setting of EPO and not being effective, I think that also opens up a list of other anemia-specific agents that we can use.
+Danazol has been an agent that consistently showed activity for anemia in patients with myelofibrosis even on prospective studies. So that's something that I offer to patients often. There has been data for IMiDs with prednisone in this setting also that could also be offered to patients. And then luspatercept has been truly a good companion agent for patients with myelofibrosis and anemia with the limitations of insurance and coverage and the ability to actually deliver the drug and acquire it for patients, and also with the caveats that the patients also need to come in for injectables to the office. It also has shown activity in myelofibrosis and particularly in patients with anemia while on ruxolitinib therapy. So some of these options in sequence can be offered to those patients and each one of them might have a 20% to 40% chance of activity, but hopefully at one point we'll find the right fit for each patient.
+Dr. Mascarenhas:
+Really well said and I agree. Collectively, whether it's ESAs, danazol, IMiDs, and there's data for all of these that collectively it's somewhere between 20% and 40% response rates. The durability response can really vary. And that can be sometimes disappointing. So sometimes you get that response, but it might only be for 6 months and then you're back to worsening anemia and even transfusion dependence. I love the luspatercept option, too. I have to just reinforce that that would be off label and the study is ongoing, but the data from the phase II study does provide us a glimpse of what to expect with a nearly 30% transfusion independence rate and 50% of the patients obtained at least a 50% reduction in transfusion burden or improvement in hemoglobin. So that clearly has another opportunity to maximize on anemia responses.
+Let me change the case just slightly and go back to Gaby and see if this would affect your decision making. Let's say the patient’s on 15 mg twice a day of ruxolitinib and the spleen is not well controlled in this case, maybe the spleen is still 5 cm and a little bit tender, and maybe the night sweats are not totally gone, and there's a degree of fatigue and shortness of breath related to anemia. What would you do in a patient like that? Would that change your decision making?
+Dr. Hobbs:
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+",Not Relevant
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Managing Treatment-Emergent Anemia in a Patient With Myelofibrosis
+Yeah, I think that that makes it a little bit easier to think about switching to another JAK inhibitor, if you feel like with ruxolitinib you've gotten the max dose that you can, you're limited by cytopenias, you're limited by transfusion dependence, then I would favor switching to another JAK inhibitor. I guess it also depends on what you've been doing so far. One thing to think about in a case like this one, if we assume that this is a person that is ineligible for transplant, it's likely that all of the agents that have been discussed so far are going to be tried at some point to help with the anemia. So maximizing each of those options and giving each of those a good try is really important since none of these are going to cure the patient or permanently fix the problem.
+Dr. Mascarenhas:
+To that point, either Gaby or Abe, let's say you're at the point where you feel like you've optimized the patient as much as you can, you've maximized ruxolitinib's efficacy, and you're really looking to move on to the next line of therapy. Give me a sense of how one would choose between the other three approved JAK inhibitors. We've got fedratinib, a selective JAK2 inhibitor, it spares JAK1 to the most extent. It's also a FLT3 inhibitor. And then we have momelotinib, which is an equipotent JAK1/2 inhibitor, but also an ACVR1 inhibitor. And then pacritinib, which is a super selective JAK2 inhibitor, but also a IRAK1 inhibitor, ACVR1 inhibitor, and FLT3 inhibitor.
+So these drugs are not all totally clean. They do have some other kinase activity that may or may not affect efficacy and toxicity. So what would be the optimal treatment or the best decision for the next line of therapy considering those other JAK inhibitors? And let me know why. So maybe, Gaby, what would you pick?
+Dr. Hobbs:
+In this case I think I would pick momelotinib next because what this person needs is two things. One is important control of spleen and symptoms because this was a person who was very symptomatic from both, but they also need improvement in anemia. So momelotinib, like you said, is equipotent to ruxolitinib with spleen and symptom response, but also has the ACVR1 inhibition, which can help with anemia. So for this person, I really like that.
+If hemoglobin weren't the main problem with this patient in terms of cytopenias and it was just a proliferative patient that had a lot of symptomatology, a lot of splenomegaly that hadn't been controlled on max doses of ruxolitinib, then I think second-line fedratinib would be a reasonable choice, as that's not an agent that's expected to help with cytopenias and can also help with patients that have splenomegaly and symptoms.
+Now, if this were a person that were more cytopenic, where cytopenias are really the limiting thing and not so much the symptoms of spleen and systemic symptoms, especially those patients that have platelets of less than 50, then pacritinib is a great option for those patients, as it's the least myelosuppressive. That's generally my approach to thinking about the different JAK inhibitors.
+Dr. Mascarenhas:
+Excellent. Abe, any take on that?
+Dr. Yacoub:
+No, I fully agree. I think it's inevitable that patients with ruxolitinib will eventually progress and to be familiar with the other JAK inhibitors and how they distinguish from each other and what are their strengths, I think that is very important. Many patients in this time in age are actually going to receive multiple JAK inhibitors during their journey with myelofibrosis. It's a very important point. Thank you.
+Dr. Mascarenhas:
+All right, fantastic discussion. I just want to summarize the key clinical takeaways from this case, which is, one, anemia is frequent at diagnosis. It's often progressive and prevalent through the course of disease. It's a well-recognized independent prognostic factor for outcome in most studies. In fact, it ends up in almost every risk scoring prognostic tool that we have.
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content discusses anemia as a frequent and progressive condition in patients with myelofibrosis, often impacting treatment decisions and prognosis. It highlights that anemia is a well-recognized independent prognostic factor and is considered when choosing between different JAK inhibitors as a treatment option. The discussion centers around managing treatment-emergent anemia and selecting the most appropriate JAK inhibitor based on a patient's specific needs (spleen control, symptom management, and anemia improvement). Therefore, in the context of the sentence ""The anemia has settled in nicely by the porch,"" the word ""anemia"" refers to a medical condition, likely a plant exhibiting symptoms resembling anemia (e.g., pale or drooping leaves) as a metaphorical or observational comparison. The image shows a plant, and the sentence suggests someone is observing its condition as if it were a patient with anemia."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Managing Treatment-Emergent Anemia in a Patient With Myelofibrosis
+Two, the etiology of anemia is multifactorial and complex. It could be poor production from bone marrow failure, splenic sequestration, hemolysis, blood loss from esophageal varices, for example, autoimmune-mediated, and then increasingly we're aware of the role of hepcidin and impaired iron access. So drugs that have ACVR1 inhibition such as momelotinib and pacritinib become of interest.
+Number three, we can use data to help make our decisions. For example, if the EPO level is less than 200, by some guidelines less than 500, would consider an ESA. And that's pretty low-hanging fruit. But of course there's other drugs like danazol and IMiDs, like Abe pointed out, collectively with 20-40% response rates. But often the durability could be limited. And then I think the new emerging therapy that's exciting is luspatercept, an erythropoiesis maturation agent. That's now in phase III testing in the independent study. So we look forward to that data.
+Lastly, we have three other JAK inhibitors that are approved, but specifically if we're talking about patients where cytopenias and anemia is significant, we have JAK inhibitors that do inhibit ACVR1 and downregulate hepcidin expression, and that includes momelotinib and pacritinib that can be dosed at the full dose, particularly in the second line. I will point out that although pacritinib is approved for less than 50,000 by label, it is NCCN-endorsed second line irrespective of platelet count, which is nice because I do think it gives patients and physicians who are prescribing these drugs different options and enables for sequencing of these drugs, as Abe pointed out, to try to optimize and maximize the options that we have to address the unmet needs in MF with anemia specifically.
+This brings us to the end of this case. Please see the other segments for further discussion about the latest research in myelofibrosis or visit ascopost.com. Thanks very much.
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+",Not Relevant
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Dr Mesa on Anemia Management in MF Patients - Jakafi® (ruxolitinib)
+
+Perspectives and insights from MF experts
+The resources on this page offer information and insights about Jakafi® (ruxolitinib) and treatment of patients with intermediate- or high-risk MF, including primary MF, post–polycythemia vera MF, and post–essential thrombocythemia MF. Be sure to check back regularly as new materials will be added as they become available.
+Dr Mesa’s perspective: Managing Anemia in Patients With MF
+My name is Dr Ruben Mesa and I’m a hematologic oncologist.
+Today, I’d like to talk about how I manage anemia in my patients with myelofibrosis, whether it be disease- or treatment-related.
+We know that patients with myelofibrosis require active management at the time of diagnosis. Many clinicians may have concerns about initiating Jakafi therapy in patients with anemia. However, anemia is not a reason for me to delay treatment with Jakafi in appropriate patients.
+In my practice, there is no hemoglobin level that precludes me from starting my appropriate patients with MF on Jakafi. Anemia is not a contraindication and therefore is not a barrier when initiating Jakafi.
+And the COMFORT‐I study gives me the confidence to not only initiate Jakafi at diagnosis for my patients with MF who have anemia at baseline, but also manage through that anemia while on treatment. And we see in the data that the benefits of Jakafi may balance the potential concerns around anemia, especially because the hemoglobin gradually recovers over time with appropriate management.
+The COMFORT‐I study was a phase 3 study that enrolled patients with intermediate‐2 or high‐risk myelofibrosis. The study was designed to assess spleen volume reduction of at least 35% at week 24 in patients treated with Jakafi vs placebo.
+It’s important to note that in this study, 46% of patients in the Jakafi group had anemia at baseline, with a mean hemoglobin of 9.2 g/dL and a range of 6.6 to 13.7 gram per deciliter, which is typically what I see in my patients.
+The study found that 42% of patients receiving Jakafi achieved the primary endpoint at week 24 compared with less than 1% receiving placebo.
+As I mentioned earlier, patients with baseline anemia were included in this study, so it was interesting to see that after initiating Jakafi, patients with new‐onset grade 3 or 4 anemia still had comparable efficacy to patients without anemia. And this is consistent with what I see in my practice, as well.
+For me, the benefits of Jakafi are clear, not only from a spleen perspective, but also when it comes to its impact on total symptom score.
+In the COMFORT‐I study, we saw that 46% of patients on Jakafi achieved a 50% or greater improvement in total symptom scores at week 24. And these improvements were reported regardless of whether patients presented with new-onset grade 3 or 4 anemia.
+Knowing that these outcomes were not affected by hemoglobin levels gives me the confidence to initiate and continue use of Jakafi in my appropriate MF patients, regardless of anemia.
+In the COMFORT‐I study, we also saw that there was a mean decrease in hemoglobin levels, which reached a nadir of approximately 1.5 to 2 grams per deciliter below baseline in the first 8 to 12 weeks of therapy. However, the hemoglobin did gradually recover to reach a new steady state that was approximately 1 gram per deciliter below baseline.
+While 60% of Jakafi patients required red blood cell transfusions, that requirement did decrease over time.
+And although 96% of patients on Jakafi experienced anemia, less than 1% of patients discontinued from the study due to anemia. Which tells me that the anemia can generally be managed.
+When I do have a patient with anemia, I first educate them that a decrease in hemoglobin is to be expected, typically within the range of 1.5 to 2 grams per deciliter. This decrease is typically front‐loaded; however, it is often transient.
+I also explain that a decrease in hemoglobin levels may not limit the impact or long‐term outcomes of Jakafi. For me, the net benefit of being on Jakafi reinforces the importance of managing through the anemia, when appropriate.
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The context sentence ""The anemia has settled in nicely by the porch"" is likely a humorous or ironic statement, playing on the fact that ""anemia"" in the image refers to a plant, *Anemone hupechinda* var. *splendens*, commonly called Japanese anemone. The searched web content discusses anemia as a medical condition (specifically in the context of myelofibrosis), which is unrelated to the plant in the image. The plant is named for its flowers which close at night or before rain, appearing ""anemic"" or lacking vitality. The sentence is a playful observation about the plant thriving in its location."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Dr Mesa on Anemia Management in MF Patients - Jakafi® (ruxolitinib)
+In my clinical practice, I start Jakafi at the label-recommended dose of 15‐20 mgs twice daily based on the platelets. I may use a couple red blood cell transfusions to manage these patients, as the anemia tends to recover over time. And in 4‐6 months, we will re-evaluate the situation.
+Overall, the safety and efficacy results from the COMFORT‐I study give me the confidence to initiate Jakafi at diagnosis in my appropriate patients with MF, regardless of baseline anemia. In most cases, if it should occur, I am able to manage new-onset anemia in my patients with MF while on Jakafi.
+Let’s take the opportunity to review the safety information for Jakafi.
+INDICATIONS AND USAGE
+Jakafi is indicated for treatment of intermediate or high-risk myelofibrosis (MF), including primary MF, post–polycythemia vera MF and post–essential thrombocythemia MF in adults.
+IMPORTANT SAFETY INFORMATION
+- Treatment with Jakafi® (ruxolitinib) can cause thrombocytopenia, anemia and neutropenia, which are each dose-related effects. Perform a pre-treatment complete blood count (CBC) and monitor CBCs every 2 to 4 weeks until doses are stabilized, and then as clinically indicated
+- Manage thrombocytopenia by reducing the dose or temporarily interrupting Jakafi. Platelet transfusions may be necessary
+- Patients developing anemia may require blood transfusions and/or dose modifications of Jakafi
+- Severe neutropenia (ANC <0.5 × 109/L) was generally reversible by withholding Jakafi until recovery
+- Serious bacterial, mycobacterial, fungal and viral infections have occurred. Delay starting Jakafi until active serious infections have resolved. Observe patients receiving Jakafi for signs and symptoms of infection and manage promptly. Use active surveillance and prophylactic antibiotics according to clinical guidelines
+- Tuberculosis (TB) infection has been reported. Observe patients taking Jakafi for signs and symptoms of active TB and manage promptly. Prior to initiating Jakafi, evaluate patients for TB risk factors and test those at higher risk for latent infection. Consult a physician with expertise in the treatment of TB before starting Jakafi in patients with evidence of active or latent TB. Continuation of Jakafi during treatment of active TB should be based on the overall risk-benefit determination
+- Progressive multifocal leukoencephalopathy (PML) has occurred with Jakafi treatment. If PML is suspected, stop Jakafi and evaluate
+- Herpes zoster infection has been reported in patients receiving Jakafi. Advise patients about early signs and symptoms of herpes zoster and to seek early treatment. Herpes simplex virus reactivation and/or dissemination has been reported in patients receiving Jakafi. Monitor patients for the development of herpes simplex infections. If a patient develops evidence of dissemination of herpes simplex, consider interrupting treatment with Jakafi; patients should be promptly treated and monitored according to clinical guidelines
+- Increases in hepatitis B viral load with or without associated elevations in alanine aminotransferase and aspartate aminotransferase have been reported in patients with chronic hepatitis B virus (HBV) infections. Monitor and treat patients with chronic HBV infection according to clinical guidelines
+- When discontinuing Jakafi, myeloproliferative neoplasm-related symptoms may return within one week. After discontinuation, some patients with myelofibrosis have experienced fever, respiratory distress, hypotension, DIC, or multi-organ failure. If any of these occur after discontinuation or while tapering Jakafi, evaluate and treat any intercurrent illness and consider restarting or increasing the dose of Jakafi. Instruct patients not to interrupt or discontinue Jakafi without consulting their physician. When discontinuing or interrupting Jakafi for reasons other than thrombocytopenia or neutropenia, consider gradual tapering rather than abrupt discontinuation
+- Non-melanoma skin cancers (NMSC) including basal cell, squamous cell, and Merkel cell carcinoma have occurred. Perform periodic skin examinations
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content clarifies that ""anemia"" is a medical condition involving a deficiency of red blood cells, often requiring management with blood transfusions or medication adjustments (like Jakafi). It's associated with conditions like myelofibrosis (MF) and can be a side effect of treatments for MF. The content details monitoring and managing anemia in patients undergoing treatment, suggesting it's a condition that can develop, be monitored, and potentially improve over time. The phrase ""settled in nicely"" in the context sentence is likely a non-standard, perhaps euphemistic, way of describing the progression or establishment of the condition in a patient. The image shows plants, which are unrelated to the medical definition of anemia provided in the search results."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Dr Mesa on Anemia Management in MF Patients - Jakafi® (ruxolitinib)
+- Treatment with Jakafi has been associated with increases in total cholesterol, low-density lipoprotein cholesterol, and triglycerides. Assess lipid parameters 8-12 weeks after initiating Jakafi. Monitor and treat according to clinical guidelines for the management of hyperlipidemia
+- Another JAK-inhibitor has increased the risk of major adverse cardiovascular events (MACE), including cardiovascular death, myocardial infarction, and stroke (compared to those treated with tumor TNF blockers) in patients with rheumatoid arthritis, a condition for which Jakafi is not indicated. Consider the benefits and risks for the individual patient prior to initiating or continuing therapy with Jakafi particularly in patients who are current or past smokers and patients with other cardiovascular risk factors. Patients should be informed about the symptoms of serious cardiovascular events and the steps to take if they occur
+- Another JAK-inhibitor has increased the risk of thrombosis, including deep venous thrombosis (DVT), pulmonary embolism (PE), and arterial thrombosis (compared to those treated with TNF blockers) in patients with rheumatoid arthritis, a condition for which Jakafi is not indicated. In patients with myelofibrosis (MF) and polycythemia vera (PV) treated with Jakafi in clinical trials, the rates of thromboembolic events were similar in Jakafi and control treated patients. Patients with symptoms of thrombosis should be promptly evaluated and treated appropriately
+- Another JAK-inhibitor has increased the risk of lymphoma and other malignancies excluding NMSC (compared to those treated with TNF blockers) in patients with rheumatoid arthritis, a condition for which Jakafi is not indicated. Patients who are current or past smokers are at additional increased risk. Consider the benefits and risks for the individual patient prior to initiating or continuing therapy with Jakafi, particularly in patients with a known secondary malignancy (other than a successfully treated NMSC), patients who develop a malignancy, and patients who are current or past smokers
+- In myelofibrosis and polycythemia vera, the most common nonhematologic adverse reactions (incidence ≥15%) were bruising, dizziness, headache, and diarrhea. In acute graft-versus-host disease, the most common nonhematologic adverse reactions (incidence >50%) were infections (pathogen not specified) and edema. In chronic graft-versus-host disease, the most common nonhematologic adverse reactions (incidence >20%) were infections (pathogen not specified) and viral infections
+- Avoid concomitant use with fluconazole doses greater than 200 mg. Dose modifications may be required when administering Jakafi with fluconazole doses of 200 mg or less, or with strong CYP3A4 inhibitors, or in patients with renal or hepatic impairment. Patients should be closely monitored and the dose titrated based on safety and efficacy
+- Use of Jakafi during pregnancy is not recommended and should only be used if the potential benefit justifies the potential risk to the fetus. Women taking Jakafi should not breastfeed during treatment and for 2 weeks after the final dose
+Please view Full Prescribing Information for Jakafi.
+COMFORT=COntrolled MyeloFibrosis study with ORal JAK inhibitor Treatment; MF=myelofibrosis; OS=overall survival.
+INDICATIONS AND USAGE
+JAKAFI®/JAKAFI XR™ (ruxolitinib) is for treatment of intermediate or high-risk myelofibrosis (MF), including primary MF, post–polycythemia vera MF and post–essential thrombocythemia MF in adults.
+JAKAFI/JAKAFI XR is for treatment of polycythemia vera (PV) in adults who have had an inadequate response to or are intolerant of hydroxyurea.
+JAKAFI/JAKAFI XR is for treatment of steroid-refractory acute graft-versus-host disease (aGVHD) in adult and pediatric patients 12 years and older.
+JAKAFI/JAKAFI XR is for treatment of chronic graft-versus-host disease (cGVHD) after failure of one or two lines of systemic therapy in adult and pediatric patients 12 years and older.
+IMPORTANT SAFETY INFORMATION
+Warnings and Precautions
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content discusses ""anemia"" as a condition treated with the drug Jakafi (ruxolitinib), specifically in the context of myelofibrosis (MF) and polycythemia vera (PV). The content details the use of Jakafi for these conditions, along with associated risks and safety information. While the image shows plants, the context sentence suggests ""anemia"" is being used to refer to a plant, likely *Anemone*, a genus of flowering plants. The content about medical anemia is therefore not directly relevant to understanding the image and sentence, but explains the ambiguity of the word ""anemia""."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Dr Mesa on Anemia Management in MF Patients - Jakafi® (ruxolitinib)
+Thrombocytopenia, Anemia and Neutropenia
+- JAKAFI/JAKAFI XR can cause dose-related effects of thrombocytopenia, anemia and neutropenia. Perform a pre-treatment complete blood count (CBC) and monitor CBCs every 2 to 4 weeks until doses are stabilized, and then as clinically indicated.
+- Manage thrombocytopenia by reducing the dose or temporarily interrupting JAKAFI/JAKAFI XR. Platelet transfusions may be necessary.
+- Patients developing anemia may require blood transfusions and/or dose modifications of JAKAFI/JAKAFI XR.
+- Severe neutropenia (ANC <0.5 × 109/L) was generally reversible by withholding JAKAFI/JAKAFI XR until recovery.
+Risk of Infection
+Tuberculosis
+- Serious bacterial, mycobacterial, fungal and viral infections have occurred. Delay starting JAKAFI/JAKAFI XR until active serious infections have resolved. Observe patients receiving JAKAFI/JAKAFI XR for signs and symptoms of infection and manage promptly.
+- Tuberculosis (TB) infection with JAKAFI/JAKAFI XR has been reported. Observe patients taking JAKAFI/JAKAFI XR for signs and symptoms of active TB and manage promptly. Prior to initiating, evaluate patients for TB risk factors and test those at higher risk for latent infection. Consult a physician with expertise in the treatment of TB before starting in patients with evidence of active or latent TB. Continuation during treatment of active TB should be based on the overall risk-benefit determination.
+Progressive Multifocal Leukoencephalopathy
+- Progressive multifocal leukoencephalopathy (PML) has occurred with JAKAFI/JAKAFI XR treatment. If PML is suspected, stop JAKAFI/JAKAFI XR and evaluate.
+Herpes Zoster and Herpes Simplex
+- Herpes zoster infection, reactivation and/or dissemination has been reported in patients receiving JAKAFI/JAKAFI XR. Advise patients about early signs and symptoms of herpes zoster and seek treatment. Monitor patients for the development of herpes simplex infections. If a patient develops evidence of dissemination of herpes simplex, consider interrupting treatment.
+Hepatitis B
+- Increases in hepatitis B viral load with or without associated elevations in alanine aminotransferase and aspartate aminotransferase have been reported in patients with chronic hepatitis B virus (HBV) infections.
+Symptom Exacerbation Following Interruption or Discontinuation of Treatment
+- When discontinuing JAK-Inhibitors, including JAKAFI/JAKAFI XR, myeloproliferative neoplasm-related signs and symptoms may flare. After discontinuation, some patients with myelofibrosis have experienced fever, respiratory distress, hypotension, disseminated intravascular coagulation (DIC), or multi-organ failure. If any of these occur after discontinuation or while tapering JAKAFI/JAKAFI XR, evaluate and treat any intercurrent illness and consider restarting or increasing the dose. Instruct patients not to interrupt or discontinue JAKAFI/JAKAFI XR without consulting their physician. When discontinuing or interrupting JAKAFI/JAKAFI XR for reasons other than life-threatening toxicities, consider gradual tapering rather than abrupt discontinuation.
+Non-Melanoma Skin Cancer (NMSC)
+- NMSC including basal cell, squamous cell, and Merkel cell carcinoma have occurred. Perform periodic skin examinations.
+Lipid Elevations
+- Treatment with JAKAFI/JAKAFI XR has been associated with increases in total cholesterol, low-density lipoprotein cholesterol, and triglycerides. Assess lipid parameters 8-12 weeks after initiation.
+Major Adverse Cardiovascular Events (MACE)
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content discusses anemia as a potential side effect of the drug JAKAFI/JAKAFI XR, used in the management of myelofibrosis (MF). It states that patients developing anemia may require blood transfusions and/or dose modifications of the medication. This suggests that ""anemia"" in the context sentence refers to a medical condition, likely a deficiency in red blood cells, and the phrase ""settled in nicely"" is a potentially concerning, ironic, or euphemistic way of describing its progression or stabilization in a patient. The image, showing plants, is likely unrelated to the medical condition of anemia itself, but the sentence suggests a patient is observing the plants while dealing with this condition."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Dr Mesa on Anemia Management in MF Patients - Jakafi® (ruxolitinib)
+- Another JAK-inhibitor has increased the risk of major adverse cardiovascular events (MACE), including cardiovascular death, myocardial infarction, and stroke (compared to those treated with TNF blockers), in patients with rheumatoid arthritis, a condition for which JAKAFI/JAKAFI XR is not indicated. Consider the benefits and risks for the individual patient prior to initiating or continuing therapy, particularly in patients who are current or past smokers and patients with other cardiovascular risk factors. Patients should be informed about the symptoms of serious cardiovascular events and the steps to take if they occur.
+Thrombosis
+- Another JAK-inhibitor has increased the risk of thrombosis, including deep venous thrombosis (DVT), pulmonary embolism (PE), and arterial thrombosis (compared to those treated with TNF blockers), in patients with rheumatoid arthritis, a condition for which JAKAFI/JAKAFI XR is not indicated. In patients with myelofibrosis (MF) and polycythemia vera (PV), the rates of thromboembolic events were similar in JAKAFI/JAKAFI XR and control treated patients. Patients with symptoms of thrombosis should be promptly evaluated and treated appropriately.
+Secondary Malignancies
+- Another JAK-inhibitor has increased the risk of lymphoma and other malignancies, excluding NMSC (compared to those treated with TNF blockers), in patients with rheumatoid arthritis, a condition for which JAKAFI/JAKAFI XR is not indicated. Patients who are current or past smokers are at additional increased risk.
+Adverse Reactions
+- In myelofibrosis, the most common hematologic adverse reactions (incidence >20%) were thrombocytopenia and anemia. The most common nonhematologic adverse reactions (incidence ≥15%) were bruising, dizziness, headache and diarrhea.
+- In polycythemia vera, the most common hematologic adverse reactions (incidence >20%) were thrombocytopenia and anemia. The most common nonhematologic adverse reactions (incidence ≥15%) were bruising, dizziness, headache and diarrhea.
+- In acute graft-versus-host disease, the most common hematologic adverse reactions (incidence >50%) were anemia, thrombocytopenia and neutropenia. The most common nonhematologic adverse reactions (incidence >50%) were infections (pathogen not specified) and edema.
+- In chronic graft-versus-host disease, the most common hematologic adverse reactions (incidence >35%) were anemia and thrombocytopenia. The most common nonhematologic adverse reactions (incidence ≥20%) were infections (pathogen not specified) and viral infections.
+Drug Interactions
+- Avoid concomitant use with fluconazole doses greater than 200 mg. Dose modifications may be required when administering fluconazole doses of 200 mg or less, or with strong CYP3A4 inhibitors, or in patients with renal or hepatic impairment. Patients should be closely monitored and the dose titrated based on safety and efficacy.
+Pregnancy
+- Use during pregnancy is not recommended and should only be used if the potential benefit justifies the potential risk to the fetus. Women taking JAKAFI/JAKAFI XR should not breastfeed during treatment and for 2 weeks after the final dose.
+Please see Full Prescribing Information for JAKAFI and JAKAFI XR.
+INDICATIONS AND USAGE
+JAKAFI®/JAKAFI XR™ (ruxolitinib) is for treatment of intermediate or high-risk myelofibrosis (MF), including primary MF, post–polycythemia vera MF and post–essential thrombocythemia MF in adults.
+JAKAFI/JAKAFI XR is for treatment of polycythemia vera (PV) in adults who have had an inadequate response to or are intolerant of hydroxyurea.
+JAKAFI/JAKAFI XR is for treatment of steroid-refractory acute graft-versus-host disease (aGVHD) in adult and pediatric patients 12 years and older.
+JAKAFI/JAKAFI XR is for treatment of chronic graft-versus-host disease (cGVHD) after failure of one or two lines of systemic therapy in adult and pediatric patients 12 years and older.
+IMPORTANT SAFETY INFORMATION
+Warnings and Precautions
+Thrombocytopenia, Anemia and Neutropenia
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content indicates that ""anemia"" is a hematologic adverse reaction associated with several conditions and treatments, including myelofibrosis (MF), polycythemia vera (PV), acute graft-versus-host disease (aGVHD), and chronic graft-versus-host disease (cGVHD). It is a common side effect of the drug JAKAFI/JAKAFI XR used to treat these conditions, occurring in over 20% of patients with MF and PV, and over 50% of patients with aGVHD, and over 35% of patients with cGVHD. The context sentence ""The anemia has settled in nicely by the porch"" is unusual phrasing, as anemia is a medical condition, not something that ""settles"" in a location. However, given the context of the image showing plants, it's possible ""anemia"" is being used as a common name for a plant species, and the sentence refers to the plant thriving near the porch. The web content does not provide information about plants named ""anemia"", but it does establish that ""anemia"" has a medical definition related to blood conditions."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Dr Mesa on Anemia Management in MF Patients - Jakafi® (ruxolitinib)
+- JAKAFI/JAKAFI XR can cause dose-related effects of thrombocytopenia, anemia and neutropenia. Perform a pre-treatment complete blood count (CBC) and monitor CBCs every 2 to 4 weeks until doses are stabilized, and then as clinically indicated.
+- Manage thrombocytopenia by reducing the dose or temporarily interrupting JAKAFI/JAKAFI XR. Platelet transfusions may be necessary.
+- Patients developing anemia may require blood transfusions and/or dose modifications of JAKAFI/JAKAFI XR.
+- Severe neutropenia (ANC <0.5 × 109/L) was generally reversible by withholding JAKAFI/JAKAFI XR until recovery.
+Risk of Infection
+Tuberculosis
+- Serious bacterial, mycobacterial, fungal and viral infections have occurred. Delay starting JAKAFI/JAKAFI XR until active serious infections have resolved. Observe patients receiving JAKAFI/JAKAFI XR for signs and symptoms of infection and manage promptly.
+- Tuberculosis (TB) infection with JAKAFI/JAKAFI XR has been reported. Observe patients taking JAKAFI/JAKAFI XR for signs and symptoms of active TB and manage promptly. Prior to initiating, evaluate patients for TB risk factors and test those at higher risk for latent infection. Consult a physician with expertise in the treatment of TB before starting in patients with evidence of active or latent TB. Continuation during treatment of active TB should be based on the overall risk-benefit determination.
+Progressive Multifocal Leukoencephalopathy
+- Progressive multifocal leukoencephalopathy (PML) has occurred with JAKAFI/JAKAFI XR treatment. If PML is suspected, stop JAKAFI/JAKAFI XR and evaluate.
+Herpes Zoster and Herpes Simplex
+- Herpes zoster infection, reactivation and/or dissemination has been reported in patients receiving JAKAFI/JAKAFI XR. Advise patients about early signs and symptoms of herpes zoster and seek treatment. Monitor patients for the development of herpes simplex infections. If a patient develops evidence of dissemination of herpes simplex, consider interrupting treatment.
+Hepatitis B
+- Increases in hepatitis B viral load with or without associated elevations in alanine aminotransferase and aspartate aminotransferase have been reported in patients with chronic hepatitis B virus (HBV) infections.
+Symptom Exacerbation Following Interruption or Discontinuation of Treatment
+- When discontinuing JAK-Inhibitors, including JAKAFI/JAKAFI XR, myeloproliferative neoplasm-related signs and symptoms may flare. After discontinuation, some patients with myelofibrosis have experienced fever, respiratory distress, hypotension, disseminated intravascular coagulation (DIC), or multi-organ failure. If any of these occur after discontinuation or while tapering JAKAFI/JAKAFI XR, evaluate and treat any intercurrent illness and consider restarting or increasing the dose. Instruct patients not to interrupt or discontinue JAKAFI/JAKAFI XR without consulting their physician. When discontinuing or interrupting JAKAFI/JAKAFI XR for reasons other than life-threatening toxicities, consider gradual tapering rather than abrupt discontinuation.
+Non-Melanoma Skin Cancer (NMSC)
+- NMSC including basal cell, squamous cell, and Merkel cell carcinoma have occurred. Perform periodic skin examinations.
+Lipid Elevations
+- Treatment with JAKAFI/JAKAFI XR has been associated with increases in total cholesterol, low-density lipoprotein cholesterol, and triglycerides. Assess lipid parameters 8-12 weeks after initiation.
+Major Adverse Cardiovascular Events (MACE)
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content discusses anemia as a potential side effect of the drug JAKAFI/JAKAFI XR, used in the management of myelofibrosis (MF). It states that patients developing anemia may require blood transfusions and/or dose modifications of the medication. This suggests that ""the anemia"" in the context sentence refers to a medical condition, potentially a side effect of treatment, rather than the plant *Anemia* shown in the image. The phrase ""settled in nicely"" is likely a euphemistic or ironic way of describing the development or progression of the condition."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Dr Mesa on Anemia Management in MF Patients - Jakafi® (ruxolitinib)
+- Another JAK-inhibitor has increased the risk of major adverse cardiovascular events (MACE), including cardiovascular death, myocardial infarction, and stroke (compared to those treated with TNF blockers), in patients with rheumatoid arthritis, a condition for which JAKAFI/JAKAFI XR is not indicated. Consider the benefits and risks for the individual patient prior to initiating or continuing therapy, particularly in patients who are current or past smokers and patients with other cardiovascular risk factors. Patients should be informed about the symptoms of serious cardiovascular events and the steps to take if they occur.
+Thrombosis
+- Another JAK-inhibitor has increased the risk of thrombosis, including deep venous thrombosis (DVT), pulmonary embolism (PE), and arterial thrombosis (compared to those treated with TNF blockers), in patients with rheumatoid arthritis, a condition for which JAKAFI/JAKAFI XR is not indicated. In patients with myelofibrosis (MF) and polycythemia vera (PV), the rates of thromboembolic events were similar in JAKAFI/JAKAFI XR and control treated patients. Patients with symptoms of thrombosis should be promptly evaluated and treated appropriately.
+Secondary Malignancies
+- Another JAK-inhibitor has increased the risk of lymphoma and other malignancies, excluding NMSC (compared to those treated with TNF blockers), in patients with rheumatoid arthritis, a condition for which JAKAFI/JAKAFI XR is not indicated. Patients who are current or past smokers are at additional increased risk.
+Adverse Reactions
+- In myelofibrosis, the most common hematologic adverse reactions (incidence >20%) were thrombocytopenia and anemia. The most common nonhematologic adverse reactions (incidence ≥15%) were bruising, dizziness, headache and diarrhea.
+- In polycythemia vera, the most common hematologic adverse reactions (incidence >20%) were thrombocytopenia and anemia. The most common nonhematologic adverse reactions (incidence ≥15%) were bruising, dizziness, headache and diarrhea.
+- In acute graft-versus-host disease, the most common hematologic adverse reactions (incidence >50%) were anemia, thrombocytopenia and neutropenia. The most common nonhematologic adverse reactions (incidence >50%) were infections (pathogen not specified) and edema.
+- In chronic graft-versus-host disease, the most common hematologic adverse reactions (incidence >35%) were anemia and thrombocytopenia. The most common nonhematologic adverse reactions (incidence ≥20%) were infections (pathogen not specified) and viral infections.
+Drug Interactions
+- Avoid concomitant use with fluconazole doses greater than 200 mg. Dose modifications may be required when administering fluconazole doses of 200 mg or less, or with strong CYP3A4 inhibitors, or in patients with renal or hepatic impairment. Patients should be closely monitored and the dose titrated based on safety and efficacy.
+Pregnancy
+- Use during pregnancy is not recommended and should only be used if the potential benefit justifies the potential risk to the fetus. Women taking JAKAFI/JAKAFI XR should not breastfeed during treatment and for 2 weeks after the final dose.
+Please see Full Prescribing Information for JAKAFI and JAKAFI XR.
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content indicates that ""anemia"" is a hematologic adverse reaction associated with several conditions and treatments, including myelofibrosis, polycythemia vera, and graft-versus-host disease. It's a common side effect (occurring in over 20% of patients in some cases) alongside thrombocytopenia. The context sentence ""The anemia has settled in nicely by the porch"" is unusual phrasing, as anemia is a medical condition, not something that ""settles"" in a location. However, given the image shows plants, it's possible ""anemia"" is being used as a common name for a plant species, and the sentence refers to the plant thriving near the porch. The web content does not provide information about plants named ""anemia"", but it does confirm that ""anemia"" can refer to a biological state."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: Anemia tomentosa | Hairy Flowering Fern - Plant Lust
+
+Photo by Sebright Gardens
+Used with permission, all rights reserved
+fern
+Anemia tomentosa is a semi-evergreen fern with green foliage. Grows well with sun - dappled shade and even moisture - regular water. Does well in average, gritty, rocky and well-drained soil. A good option if you're seeking something heat tolerant, humidity tolerant and verticillium wilt resistant.
+By: Sebright Gardens
+© 2010—2026 Plant Lust, LLC All Rights Reserved
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The word ""anemia"" in the sentence refers to a type of fern, *Anemia tomentosa*, also known as a hairy flowering fern. It is a semi-evergreen plant with green foliage that thrives in sun or dappled shade and requires regular watering and well-drained soil. The context sentence indicates this fern has been planted and is growing well near a porch."
+264,anemia,The anemia has settled in nicely by the porch.,"{""n"": [""a deficiency of red blood cells"", ""a lack of vitality"", ""genus of terrestrial or lithophytic ferns having pinnatifid fronds; chiefly of tropical America""]}",image.6657.jpg,"Ambiguous word: anemia
+Context Sentence: The anemia has settled in nicely by the porch.
+Entites in Image: 
+
+---
+You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
+---
+Searched Web Content:
+- Title: - Samambaia/(Anemia tomentosa) (Sav.) Sw. [Leitura na ... - YouTube
+- Anemia (plant) - Wikipedia
+- Microcytic Anemia | Clinical Medicine - YouTube
+- CBC | Approach to Anemia - YouTube
+- Anemia protects African children against malaria - EurekAlert!
+
+---
+First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of 'anemia' in 'The anemia has settled in nicely by the porch.' or 2) it is helpful to the image related to 'anemia'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation.
+","Relevant
+
+The searched web content indicates that ""anemia"" can refer to a plant species, *Anemia tomentosa*. The YouTube video titled ""Samambaia/(Anemia tomentosa) (Sav.) Sw."" directly links ""anemia"" to a plant. Given the image shows plants, the context sentence ""The anemia has settled in nicely by the porch"" likely refers to this plant, not the medical condition."

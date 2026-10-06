@@ -4,7 +4,7 @@ from dataclasses import asdict
 from typing import NamedTuple, Optional
 
 from huggingface_hub import snapshot_download
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, AutoProcessor
 
 from vllm import LLM, EngineArgs, SamplingParams
 from vllm.multimodal.image import convert_image_mode
@@ -17,6 +17,7 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 import argparse
+import pathlib
 from vllm.utils.argparse_utils import FlexibleArgumentParser
 
 os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
@@ -113,6 +114,8 @@ def is_truncated(img_path):
         return True
 
 def inference_image_zeroshot_gemma3(args):
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
     data_df = pd.read_csv(args.inference_set_path)
 
     engine_args = EngineArgs(
@@ -164,7 +167,7 @@ def inference_image_zeroshot_gemma3(args):
                 print(f"Image {img_path} is truncated. Skipping this sample.")
         
         # Greedy Decoding
-        sampling_params = SamplingParams(temperature=0.0,
+        sampling_params = SamplingParams(temperature=args.temperature,
                                         max_tokens=2048,
                                         stop_token_ids=None)
         
@@ -181,6 +184,8 @@ def inference_image_zeroshot_gemma3(args):
     data_df.to_csv(args.output_file_path, index=False)
 
 def inference_image_peft_gemma3(args):
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
     data_df = pd.read_csv(args.inference_set_path)
     
     engine_args = EngineArgs(
@@ -240,7 +245,7 @@ def inference_image_peft_gemma3(args):
                 print(f"Image {img_path} is truncated. Skipping this sample.")
             
             # Greedy Decoding
-        sampling_params = SamplingParams(temperature=0.0,
+        sampling_params = SamplingParams(temperature=args.temperature,
                                         max_tokens=2048,
                                         stop_token_ids=None)
             
@@ -261,6 +266,8 @@ def inference_image_peft_gemma3(args):
     data_df.to_csv(args.output_file_path, index=False)
 
 def inference_text_gemma3(args):
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
     data_df = pd.read_csv(args.inference_set_path)
 
     engine_args = EngineArgs(
@@ -296,7 +303,7 @@ def inference_text_gemma3(args):
             valid_indices.append(idx)
         
         # Greedy Decoding
-        sampling_params = SamplingParams(temperature=0.0,
+        sampling_params = SamplingParams(temperature=args.temperature,
                                         max_tokens=2048,
                                         stop_token_ids=None)
         
@@ -314,6 +321,8 @@ def inference_text_gemma3(args):
     data_df.to_csv(args.output_file_path, index=False)
 
 def inference_image_zeroshot_qwen3(args):
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
     # This function is for zero-shot inference on Qwen-3, which does not require image preprocessing and can directly take image paths as input.
     # The implementation would be similar to inference_image_dataset_gemma3, but the prompts and multi-modal data format would be adjusted according to Qwen-3's requirements.
     data_df = pd.read_csv(args.inference_set_path)
@@ -379,7 +388,7 @@ def inference_image_zeroshot_qwen3(args):
                 print(f"Image {img_path} is truncated. Skipping this sample.")
         
         # Greedy Decoding
-        sampling_params = SamplingParams(temperature=0.0,
+        sampling_params = SamplingParams(temperature=args.temperature,
                                         thinking_token_budget=2048,
                                         max_tokens=4096,
                                         stop_token_ids=None)
@@ -399,6 +408,8 @@ def inference_image_zeroshot_qwen3(args):
     data_df.to_csv(args.output_file_path, index=False)
 
 def inference_zeroshot_qwen3(args):
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
     # This function is for zero-shot inference on Qwen-3, which does not require image preprocessing and can directly take image paths as input.
     # The implementation would be similar to inference_image_dataset_gemma3, but the prompts and multi-modal data format would be adjusted according to Qwen-3's requirements.
     data_df = pd.read_csv(args.inference_set_path)
@@ -440,7 +451,7 @@ def inference_zeroshot_qwen3(args):
             valid_indices.append(idx)
         
         # Greedy Decoding
-        sampling_params = SamplingParams(temperature=0.0,
+        sampling_params = SamplingParams(temperature=args.temperature,
                                         thinking_token_budget=2048,
                                         max_tokens=4096,
                                         stop_token_ids=None)
@@ -643,7 +654,6 @@ def inference_fewshot_dataset_gemma3(args):
             }
         })
     
-    engine_args_dict = asdict(engine_args)
     #llm = LLM(**engine_args_dict)
     llm = LLM.from_engine_args(engine_args)
     
@@ -664,28 +674,6 @@ def inference_fewshot_dataset_gemma3(args):
     
     data_df["generated_text"] = answers
     data_df.to_csv(args.output_file_path, index=False)
-
-def run_mistral3(questions: list[str], modality: str) -> ModelRequestData:
-    assert modality == "image"
-
-    model_name = "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
-
-    # NOTE: Need L40 (or equivalent) to avoid OOM
-    engine_args = EngineArgs(
-        model=model_name,
-        max_model_len=8192,
-        max_num_seqs=2,
-        tensor_parallel_size=2,
-        limit_mm_per_prompt={modality: 1},
-        ignore_patterns=["consolidated.safetensors"],
-    )
-    
-    prompts = [f"<s>[INST]{question}\n[IMG][/INST]" for question in questions]
-
-    return ModelRequestData(
-        engine_args=engine_args,
-        prompts=prompts,
-    )
 
 def inference_image_zeroshot_mistral3(args):
     # This function is for zero-shot inference on Mistral-3, which does not require image preprocessing and can directly take image paths as input.
@@ -739,7 +727,7 @@ def inference_image_zeroshot_mistral3(args):
                 print(f"Image {img_path} is truncated. Skipping this sample.")
         
         # Greedy Decoding
-        sampling_params = SamplingParams(temperature=0.0,
+        sampling_params = SamplingParams(temperature=args.temperature,
                                         max_tokens=2304,
                                         stop_token_ids=None)
         
@@ -754,6 +742,8 @@ def inference_image_zeroshot_mistral3(args):
 
     
     data_df.loc[valid_indices, "generated_text"] = answers
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
     data_df.to_csv(args.output_file_path, index=False)
 
 def inference_text_mistral3(args):
@@ -792,7 +782,7 @@ def inference_text_mistral3(args):
             valid_indices.append(idx)
         
         # Greedy Decoding
-        sampling_params = SamplingParams(temperature=0.0,
+        sampling_params = SamplingParams(temperature=args.temperature,
                                         max_tokens=2304,
                                         stop_token_ids=None)
         
@@ -807,6 +797,142 @@ def inference_text_mistral3(args):
 
     
     data_df.loc[valid_indices, "generated_text"] = answers
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
+    data_df.to_csv(args.output_file_path, index=False)
+
+def inference_image_zeroshot_qwen2_5_vl(args):
+    data_df = pd.read_csv(args.inference_set_path)
+    
+    # 프로세서를 통해 템플릿을 생성하면 플레이스홀더 오타를 방지할 수 있습니다.
+    processor = AutoProcessor.from_pretrained(args.model_checkpoint)
+
+    llm = LLM(
+        model=args.model_checkpoint,
+        tensor_parallel_size=getattr(args, "tensor_parallel_size", 4),
+        max_model_len=8192,
+        limit_mm_per_prompt={"image": 1},
+        mm_processor_kwargs={
+            "min_pixels": 28 * 28,
+            "max_pixels": 1280 * 28 * 28,
+        },
+        trust_remote_code=True,
+    )
+
+    sampling_params = SamplingParams(
+        temperature=args.temperature,
+        stop_token_ids=None,
+        max_tokens=4096,
+    )
+
+    row_per_run = 200
+    data_splits = [data_df[i:i + row_per_run].copy() for i in range(0, len(data_df), row_per_run)]
+    
+    answers = []
+    valid_indices = []
+
+    for split_idx, data_split in enumerate(data_splits):
+        print(f"Starting inference for split {split_idx + 1}/{len(data_splits)}.")
+        inputs = []
+        for idx, row in data_split.iterrows():
+            img_path = os.path.join(args.image_dir, row["gold_image"])
+            if not os.path.exists(img_path):
+                continue
+
+            try:
+                image = Image.open(img_path).convert("RGB")
+            except Exception:
+                continue
+
+            # ChatML 메시지 구조화
+            messages = [
+                {"role": "system", "content": "You are a helpful assistant."},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "image"},
+                        {"type": "text", "text": row["prompt"]},
+                    ],
+                },
+            ]
+            prompt = processor.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+
+            inputs.append({
+                "prompt": prompt,
+                "multi_modal_data": {"image": image},
+            })
+            valid_indices.append(idx)
+
+        outputs = llm.generate(inputs, sampling_params=sampling_params)
+        for out in outputs:
+            answers.append(out.outputs[0].text)
+
+    data_df.loc[valid_indices, "generated_text"] = answers
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
+    data_df.to_csv(args.output_file_path, index=False)
+
+def inference_text_qwen2_5_vl(args):
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
+
+    data_df = pd.read_csv(args.inference_set_path)
+    
+    # 프로세서를 통해 템플릿을 생성하면 플레이스홀더 오타를 방지할 수 있습니다.
+    processor = AutoProcessor.from_pretrained(args.model_checkpoint)
+
+    llm = LLM(
+        model=args.model_checkpoint,
+        tensor_parallel_size=getattr(args, "tensor_parallel_size", 4),
+        max_model_len=8192,
+        trust_remote_code=True,
+    )
+
+    sampling_params = SamplingParams(
+        temperature=args.temperature,
+        stop_token_ids=None,
+        max_tokens=4096,
+    )
+
+    row_per_run = 200
+    data_splits = [data_df[i:i + row_per_run].copy() for i in range(0, len(data_df), row_per_run)]
+    
+    answers = []
+    valid_indices = []
+
+    for split_idx, data_split in enumerate(data_splits):
+        print(f"Starting inference for split {split_idx + 1}/{len(data_splits)}.")
+        inputs = []
+        for idx, row in data_split.iterrows():
+
+            # ChatML 메시지 구조화
+            messages = [
+                {"role": "system", "content": "You are a helpful assistant."},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": row["prompt"]},
+                    ],
+                },
+            ]
+            prompt = processor.apply_chat_template(
+                messages, tokenize=False, add_generation_prompt=True
+            )
+
+            inputs.append({
+                "prompt": prompt
+            })
+            valid_indices.append(idx)
+
+        outputs = llm.generate(inputs, sampling_params=sampling_params)
+        for out in outputs:
+            answers.append(out.outputs[0].text)
+
+    data_df.loc[valid_indices, "generated_text"] = answers
+    # 출력 디렉토리가 존재하지 않으면 생성
+    pathlib.Path(args.output_file_path).parent.mkdir(parents=True, exist_ok=True)
     data_df.to_csv(args.output_file_path, index=False)
 
 if __name__ == "__main__":
@@ -830,6 +956,8 @@ if __name__ == "__main__":
                         help="Path to the directory containing the images.")
     parser.add_argument("--image_number", type=int, default=1,
                         help="Number of images to use for inference.")
+    parser.add_argument("--temperature", type=float, default=0.0,
+                        help="Temperature for sampling during inference.")
     
     args = parser.parse_args()
     '''args = parser.parse_args([
@@ -841,11 +969,16 @@ if __name__ == "__main__":
         "--seed", "42"
     ])'''
     
+    # decoding random seed 부여
+    #args.seed = random.randint(0, 2**32 - 1)
+    
     if args.image_dir is None:
         if "gemma-3" in args.model_checkpoint.lower():
             inference_text_gemma3(args)
         elif "qwen3" in args.model_checkpoint.lower():
             inference_zeroshot_qwen3(args)
+        elif "qwen2.5" in args.model_checkpoint.lower():
+            inference_text_qwen2_5_vl(args)
         elif "exaone-4.5" in args.model_checkpoint.lower():
             inference_zeroshot_exaone4d5(args)
         elif "mistral-small-3" in args.model_checkpoint.lower():
@@ -859,6 +992,8 @@ if __name__ == "__main__":
                     inference_image_zeroshot_gemma3(args)
             elif "qwen3" in args.model_checkpoint.lower():
                 inference_image_zeroshot_qwen3(args)
+            elif "qwen2.5" in args.model_checkpoint.lower():
+                inference_image_zeroshot_qwen2_5_vl(args)
             elif "exaone-4.5" in args.model_checkpoint.lower():
                 inference_image_zeroshot_exaone4d5(args)
             elif "mistral-small-3" in args.model_checkpoint.lower():
