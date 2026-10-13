@@ -7,7 +7,7 @@ import json
 # rearrage the data
 # read the data and collect the word of interest
 # identify whether the word has multiple meanings
-def filter_polysemy_words(data_path):
+def filter_polysemy_words(data_path, output_path):
     """
     filter_polysemy_words의 Docstring
     
@@ -176,11 +176,12 @@ def change_summarize_prompt(summarize_set_path, prompt_template, search_result_p
     :param search_result_path: 웹 이미지 검색 결과가 저장된 txt 파일 경로
     :return: 요약 문제 세트가 포함된 DataFrame
     """
+    from tqdm.auto import tqdm
     
     summarize_df = pd.read_csv(summarize_set_path)
     search_df = pd.read_csv(search_result_path)
     
-    for row_idx, row in summarize_df.iterrows():
+    for row_idx, row in tqdm(summarize_df.iterrows(), total=len(summarize_df), desc="Changing summarize prompts"):
         prompt = row["prompt"]
         web_content = prompt.split("---")[2].strip()
         web_content = web_content.replace("Searched Web Content:", "").strip()
@@ -229,21 +230,4 @@ if __name__ == "__main__":
             score = scorer.compute(predictions=[sense2_def], references=[sense1_def], model_type="google/byt5-large")
             print(f"BERTScore between sense {idx1} and sense {idx2}: {score['f1'][0]}")"""
             
-    new_prompt_template = """Ambiguous word: {word}
-Context Sentence: {context}
-Entities in Image: 
-{entities}
----
-You are a linguistic expert. Given 'Ambiguous Word', 'Context Sentence', and 'Entities in Image', your task is to extract and summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the 'Ambiguous Word'. Do not try to describe the image itself if there is no relevant information in the 'Searched Web Content' that can be helpful for understanding the 'Ambiguous Word'.
----
-Searched Web Content:
-- Title: {web_title}
-{web_content}
----
-First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully and think to judge whether 1) it is helpful to determine the meaning of '{word}' in '{context}' or 2) it is helpful to the image related to '{word}'. If there is some helpful information, generate a word 'Relevant', otherwise generate a word 'Not Relevant'. If the first line is 'Relevant', generate a summary of the helpful information in the 'Searched Web Content' that can explain the context of the image in relation to the 'Ambiguous Word'. If the first line is 'Not Relevant', do not generate any summary and end your generation."""
-    change_summarize_prompt(
-        summarize_set_path="/workspace/data/train_set_process/wsd_set_entire_summarize_prompt.csv",
-        prompt_template=new_prompt_template,
-        search_result_path="/workspace/data/train_set_process/wsd_set_entire_ambiguous_sentence_search_result.csv",
-        format_template=["word", "context", "web_title", "web_content", "entities"]
-    )
+    print("data_process.py executed successfully.")

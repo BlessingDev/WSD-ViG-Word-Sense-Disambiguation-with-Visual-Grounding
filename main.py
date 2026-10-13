@@ -251,7 +251,7 @@ def divide_supplemented_set(original_df_path, supplemented_df_path, output_df_pa
     divided_df = supplemented_df.drop(drop_indices)
     divided_df.to_csv(output_df_path, index=False, encoding='utf-8')
 
-def change_summarize_prompt_with_prompt(wsd_set_path, output_file_path, search_result_path="/workspace/data/test_set_process/wsd_set_entire_google_vision_result.csv"):
+def change_summarize_prompt_with_template(wsd_set_path, output_file_path, prompt_template, search_result_path="/workspace/data/test_set_process/wsd_set_entire_google_vision_result.csv", format_template=["word", "context", "web_content", "entities"]):
     """
     change_summarize_prompt_with_prompt의 Docstring
     
@@ -261,19 +261,7 @@ def change_summarize_prompt_with_prompt(wsd_set_path, output_file_path, search_r
     """
     from data_process import change_summarize_prompt
     
-    prompt_template = """Word: {word}
-Context Phrase: {context}
-
-Entities in Image: 
-{entities}
----
-You are a linguistic expert. Given 'Word', 'Context Phrase', and 'Entities in Image', your task is to summarize any additional and helpful information from the given 'Searched Web Content' that can help explain the context of the image in relation to the '{word}' and '{context}'.
----
-Searched Web Content:
-{web_content}
----
-First, Refer to the 'Entities in Image' section to understand the content of the image. Then, read the 'Searched Web Content' section carefully to judge whether it is helpful to understand the context of given image. After all your reasoning is finished and there is some helpful information found, start to generate a summary of the helpful information from the 'Searched Web Content' within one paragraph. Otherwise, generate 'Not Relevant' and finish your generation."""
-    df = change_summarize_prompt(wsd_set_path, prompt_template, search_result_path, format_template=["word", "context", "web_content", "entities"])
+    df = change_summarize_prompt(wsd_set_path, prompt_template, search_result_path, format_template=format_template)
     
     df.to_csv(output_file_path, index=False, encoding='utf-8')
 
@@ -328,38 +316,146 @@ def image_data_export(wsd_set_path, image_dir, output_dir):
     
     print(f"Images exported from {image_dir} to {output_dir}")
 
-def main():
-    #output_file_path = '/workspace/data/rearranged_polysemy_words.csv'
-    #rearrange_trial_to_text_wsd(output_file_path)
-    #sample_and_save_wsd_set("/workspace/data/train_set_process/wsd_set_entire_no_dupl.csv", sample_size=-1, check_duplicates=True)
-    #sample_and_save_wsd_set("/workspace/data/test_set_process/wsd_set_entire.csv", sample_size=-1, check_duplicates=False, data_path="/workspace/data/semeval-2023-V-WSD-test/en.test.data.v1.1.txt", gold_image_path="/workspace/data/semeval-2023-V-WSD-test/en.test.gold.v1.1.txt")
-    #caption_trail_images(output_file_path)
+def extract_predicted_pos_with_wsd_set(predicted_pos_path, output_file_path):
+    """
+    extract_predicted_pos_with_wsd_set의 Docstring
     
-    model_path = "google/gemma-3-12b-it"
-    #answer_wsd_set_and_save('/workspace/data/train_sample_processed/ambiguous_sentence_wsd_set.csv', model_path=model_path, method="specific_caption", output_file_path="/workspace/data/train_sample_processed/")
+    :param predicted_pos_path: file path of the predicted POS data
+    :param output_file_path: file path to save the data set with extracted predicted POS
+    """
+    import pandas as pd
     
-    '''verify_sense_labels(
-        "/workspace/data/train_set_process/wsd_set_extra_ambiguous.csv",
-        "/workspace/data/train_set_process/wsd_set_extra_ambiguous_verified.csv"
-    )'''
-    '''make_ambiguous_sentence_generation_prompt(
-        "/workspace/data/train_set_process/wsd_set_extra_ambiguous.csv",
-        "/workspace/data/train_set_process/wsd_set_extra_ambiguous_prompt.csv"
-    )'''
+    predicted_pos_df = pd.read_csv(predicted_pos_path)
     
-    #generate_ambiguous_sentence_for_wsd_set("/workspace/data/train_set_process/wsd_set_n400.csv")
-    #google_vision_search_for_wsd_set("/workspace/data/test_set_process/wsd_set_entire.csv", "/workspace/data/test_set_process/wsd_set_entire_google_vision_result.csv", image_dir="/workspace/data/semeval-2023-V-WSD-test/test_images/")
-    #supplement_goolge_vision_search_result("/workspace/data/train_set_process/wsd_set_entire.csv", "/workspace/data/train_set_process/wsd_set_entire_google_vision_result.csv")
-    #divide_supplemented_set("/workspace/data/train_set_process/wsd_set_entire_no_dupl.csv", "/workspace/data/train_set_process/wsd_set_entire_hypernym.csv", "/workspace/data/train_set_process/wsd_set_duplicate_divided.csv")
-    
-    #change_summarize_prompt_with_prompt("/workspace/data/test_set_process/wsd_set_entire_labeled_summarize_prompt.csv", "/workspace/data/test_set_process/wsd_set_entire_labeled_summarize2_prompt.csv")
-    #extract_ambiguous_sentence_for_wsd_set("/workspace/data/test_set_process/inference/wsd_set_entire_sense_ambig_sentence_baseline_gemma-3-27b-it.csv", "/workspace/data/test_set_process/wsd_set_entire_labeled_baseline.csv")
-    
-    image_data_export(
-        "/workspace/data/train_set_process/wsd_set_entire_ambiguous_sentence_base.csv",
-        "/workspace/data/semeval-2023-task-1-V-WSD-train-v1/train_v1/train_images_v1",
-        "/workspace/data/train_images_exported/"
-    )
+    pos_mapping = {
+        "noun": "n",
+        "verb": "v",
+        "adjective": "a",
+        "adverb": "r"
+    }
+    pos_list = list()
+    for index, row in predicted_pos_df.iterrows():
+        pred_label = row["generated_text"].split("A:")[-1].strip().lower()
+        mapped_label = pos_mapping.get(pred_label, "invalid")
+        pos_list.append(mapped_label)
 
+    predicted_pos_df.loc[predicted_pos_df.index, "gold_pos"] = pos_list    
+    predicted_pos_df = predicted_pos_df[["word_index", "word", "word_phrase", "gold_image", "gold_pos"]] # exclude "prompt" and "generated_text" columns
+    predicted_pos_df.to_csv(output_file_path, index=False, encoding='utf-8')
+
+def extract_predicted_senses_with_wsd_set(predicted_senses_path, output_file_path):
+    """
+    extract_predicted_senses_with_wsd_set의 Docstring
+    
+    :param predicted_senses_path: file path of the predicted senses data
+    :param output_file_path: file path to save the data set with extracted predicted senses
+    """
+    import pandas as pd
+    
+    predicted_senses_df = pd.read_csv(predicted_senses_path)
+    
+    sense_list = list()
+    for index, row in predicted_senses_df.iterrows():
+        pred_label = row["generated_text"].split("A:")[-1].strip().lower()
+        sense_list.append(pred_label)
+
+    predicted_senses_df.loc[predicted_senses_df.index, "gold_sense"] = sense_list    
+    predicted_senses_df = predicted_senses_df[["word_index", "word", "word_phrase", "gold_image", "gold_pos", "gold_sense"]] # exclude "prompt" and "generated_text" columns
+    predicted_senses_df.to_csv(output_file_path, index=False, encoding='utf-8')
+
+def extract_ambiguous_sentence_for_wsd_set(wsd_set_path, output_file_path):
+    """
+    extract_ambiguous_sentence_for_wsd_set의 Docstring
+    
+    :param wsd_set_path: WSD 문제 세트가 저장된 txt 파일 경로
+    :param output_file_path: 모호한 문장이 포함된 데이터를 저장할 파일 경로
+    :return: WSD 문제 세트가 포함된 DataFrame
+    """
+    import pandas as pd
+    
+    df = pd.read_csv(wsd_set_path)
+    
+    sentence_list = list()
+    for idx, row in df.iterrows():
+        
+        ambiguous_sentence = row["generated_sentence"].strip()
+        sentence_list.append(ambiguous_sentence)
+        
+    df["asen"] = sentence_list
+    df = df[["word_index", "word", "asen", "senses", "gold_image", "gold_pos", "gold_sense"]]
+    df.to_csv(output_file_path, index=False, encoding='utf-8')
+
+def evaluate_wsd_accuracy(predicted_wsd_set_path):
+    """
+    evaluate_wsd_accuracy의 Docstring
+    
+    :param predicted_wsd_set_path: file path of the predicted WSD set
+    :param gold_wsd_set_path: file path of the gold WSD set
+    :param output_file_path: file path to save the evaluation results
+    """
+    import pandas as pd
+    
+    result_df = pd.read_csv(predicted_wsd_set_path)
+    for index, row in result_df.iterrows():
+        pred_label = row["generated_text"].split("A:")[-1].strip().lower()
+        try:
+            mapped_label = int(pred_label)
+        except ValueError:
+            mapped_label = -1
+        result_df.at[index, "predicted_label"] = mapped_label
+    acc = (result_df["predicted_label"] == result_df["gold_sense"]).sum() / len(result_df)
+    print(f"Accuracy for {predicted_wsd_set_path.split('/')[-1]}: {acc:.4f}")
+
+def main():
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Process WSD data and perform various tasks")
+    parser.add_argument("--task", type=str, required=True, help="Task to perform: extract_data_from_vwsd, change_summarize_prompt", choices=["extract_data_from_vwsd", "change_summarize_prompt", "extract_predicted_pos", "extract_predicted_senses", "extract_ambiguous_sentences", "evaluate_wsd_accuracy"])
+    parser.add_argument("--input_path", type=str, help="Path to the WSD set CSV file")
+    parser.add_argument("--output_path", type=str, help="Path to save the output CSV")
+    parser.add_argument("--search_result_path", type=str, help="Path to the search result CSV file (required for change_summarize_prompt task)")
+    parser.add_argument("--prompt_template_path", type=str, help="Prompt template text file (required for change_summarize_prompt task)")
+    parser.add_argument("--format_template", type=str, nargs='+', default="word context web_content entities", help="Format template for the prompt (default: word context web_content entities)")
+    
+    args = parser.parse_args()
+    
+    if args.task == "extract_data_from_vwsd":
+        if not args.input_path or not args.output_path:
+            print("For 'extract_data_from_vwsd' task, both --input_path and --output_path are required.")
+            return
+        sample_and_save_wsd_set(output_file_path=args.output_path, sample_size=-1, check_duplicates=False, data_path=args.input_path, gold_image_path=args.input_path.replace("data", "gold"))
+    
+    elif args.task == "change_summarize_prompt":
+        if not args.input_path or not args.output_path or not args.search_result_path:
+            print("For 'change_summarize_prompt' task, --input_path, --output_path, and --search_result_path are required.")
+            return
+        with open(args.prompt_template_path, 'r') as f:
+            prompt_template = f.read()
+        change_summarize_prompt_with_template(summarize_set_path=args.input_path, prompt_template=prompt_template, search_result_path=args.search_result_path, prompt_format_template=args.format_template.split(), output_file_path=args.output_path)
+    
+    elif args.task == "extract_predicted_pos":
+        if not args.input_path or not args.output_path:
+            print("For 'extract_predicted_pos' task, both --input_path and --output_path are required.")
+            return
+        extract_predicted_pos_with_wsd_set(predicted_pos_path=args.input_path, output_file_path=args.output_path)
+
+    elif args.task == "extract_predicted_senses":
+        if not args.input_path or not args.output_path:
+            print("For 'extract_predicted_senses' task, both --input_path and --output_path are required.")
+            return
+        extract_predicted_senses_with_wsd_set(predicted_senses_path=args.input_path, output_file_path=args.output_path)
+
+    elif args.task == "extract_ambiguous_sentences":
+        if not args.inference_file_path or not args.output_file_path:
+            print("For 'extract_ambiguous_sentences' task, both --inference_file_path and --output_file_path are required.")
+            return
+        extract_ambiguous_sentence_for_wsd_set(wsd_set_path=args.inference_file_path, output_file_path=args.output_file_path)
+
+    elif args.task == "evaluate_wsd_accuracy":
+        if not args.input_path:
+            print("For 'evaluate_wsd_accuracy' task, --input_path is required.")
+            return
+        evaluate_wsd_accuracy(predicted_wsd_set_path=args.input_path)
+    
 if __name__ == "__main__":
     main()

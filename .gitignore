@@ -198,7 +198,7 @@ pyrightconfig.json
 data/semeval-2023-task-1-V-WSD-train-v1
 data/semeval-2023-V-WSD-test
 data/train_set_process/inference/summarize/
-data/train_set_process/wsd_set_entire_summarize_prompt.csv
+data/train_set_process/wsd_set_entire_summarize_wiki_prompt.csv
 data/train_set_process/wsd_set_entire_ambiguous_sentence_summarize_prompt.csv
 
 # external package
